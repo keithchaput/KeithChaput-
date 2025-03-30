@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="kc-logo.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Keith Chaput – Political Art & Design</title>
@@ -184,6 +185,7 @@
     background: #444;
   }
   body.dark-mode footer {
+  border-top: 4px solid var(--soft-red);
     background: #2c2c2c;
   }
 .contact-form {
@@ -238,7 +240,17 @@ footer .container p:last-child {
   color: #777;
   text-align: center;
 }
-</style>
+.footer-donate-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+footer p {
+  text-align: center;
+  margin: 0.5rem auto;
+}
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.createElement('button');
@@ -265,12 +277,60 @@ footer .container p:last-child {
   });
 </script>
 
+<style>
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  #preloader h1 {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2.5rem;
+    color: var(--soft-red);
+    animation: fadeIn 1s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+.gallery a::after {
+  content: '→';
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.5);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery a:hover::after {
+  opacity: 1;
+}
+nav a.active {
+  border-bottom: 2px solid var(--gold);
+  color: var(--gold);
+}
+html {
+  scroll-behavior: smooth;
+}
+</style>
 </head>
 <body>
+  <div id="preloader"><h1>Keith Chaput Designs</h1></div>
   <header>
-    <img src="kc-logo.png" alt="Keith Chaput Logo">
+    
     <h1 class="fade-in">Keith Chaput</h1>
-    <p class="fade-in call-to-action" style="animation-delay: 0.2s">Art for Solidarity.</p>
+    <p class="fade-in call-to-action" style="animation-delay: 0.2s">Illustrating the Revolution</p>
     <nav class="fade-in" style="animation-delay: 0.3s">
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -338,7 +398,7 @@ footer .container p:last-child {
   <footer>
   <div class="container">
     <p style="text-align: center;">Donate to Support My Work</p>
-    <div class="footer-donate-icons" style="text-align: center;">
+    <div class="footer-donate-icons">
   <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
     <i class="fab fa-paypal"></i>
   </a>
@@ -353,10 +413,43 @@ footer .container p:last-child {
   <script>
 document.addEventListener('DOMContentLoaded', () => {
   window.openLightbox = function(e, src) {
-    e.preventDefault();
-    const instance = basicLightbox.create(`<img src="${src}" style="max-width: 90vw; max-height: 90vh;">`);
+  e.preventDefault();
+  const altText = e.currentTarget.querySelector('img').alt || '';
+  const instance = basicLightbox.create(`
+    <div style="position: relative; text-align: center; max-width: 90vw;">
+      <img src="${src}" style="max-height: 85vh; width: auto;">
+      <p style="margin-top: 0.75rem; color: white; font-size: 1rem;">${altText}</p>
+    </div>
+  `);
+  instance.show();
+}" style="max-width: 90vw; max-height: 90vh;">`);
     instance.show();
   }
 });
+</script>
+<script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      setTimeout(() => preloader.remove(), 500);
+    }
+  });
+</script>
+<script>
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = Array.from(document.querySelectorAll('main section'));
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+    sections.forEach(section => {
+      const id = section.getAttribute('id');
+      const link = document.querySelector(`nav a[href="#${id}"]`);
+      if (link) {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        link.classList.toggle('active', scrollPos >= top && scrollPos < bottom);
+      }
+    });
+  });
 </script>
 </body>
