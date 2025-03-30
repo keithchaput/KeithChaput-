@@ -255,10 +255,12 @@
   </footer>
 
   <script>
-    function openLightbox(e, src) {
-      e.preventDefault();
-      const instance = basicLightbox.create(`<img src="${src}" style="max-width: 90vw; max-height: 90vh;">`);
-      instance.show();
-    }
-  </script>
+document.addEventListener('DOMContentLoaded', () => {
+  window.openLightbox = function(e, src) {
+    e.preventDefault();
+    const instance = basicLightbox.create(`<img src="${src}" style="max-width: 90vw; max-height: 90vh;">`);
+    instance.show();
+  }
+});
+</script>
 </body>
