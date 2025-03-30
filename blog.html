@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Keith Chaput</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #ede4d1;
+      --accent: #14325c;
+      --highlight: #c0402a;
+      --text-dark: #1b1b1b;
+      --text-light: #ffffff;
+      --card-bg: #fff7ed;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Work Sans', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: var(--accent);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: var(--text-light);
+      margin: 0 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    article {
+      background: var(--card-bg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-left: 6px solid var(--highlight);
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    article h2 {
+      font-family: 'Archivo Black', sans-serif;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    article p {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--accent);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+      .categories {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .categories h3 {
+      margin-top: 0;
+      font-family: 'Archivo Black', sans-serif;
+      color: var(--accent);
+    }
+
+    .categories ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .categories li a {
+      color: var(--highlight);
+      font-weight: bold;
+      text-decoration: none;
+      background: rgba(192, 64, 42, 0.1);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .categories li a:hover {
+      background: rgba(192, 64, 42, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Keith's Blog</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Archives</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="categories">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Politics</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Inspiration</a></li>
+      </ul>
+    </section>
+    <article>
+      <h2>Why Design Matters in Politics</h2>
+      <p><em>March 30, 2025</em></p>
+      <p>Design isn’t just about making things pretty — it’s about communication, clarity, and power. In politics, great design can make the difference between apathy and action.</p>
+    </article>
+
+    <article>
+      <h2>The Legacy of WPA Posters</h2>
+      <p><em>March 25, 2025</em></p>
+      <p>The bold shapes and messages of New Deal-era posters continue to inspire designers and organizers today. Here’s how that aesthetic lives on in grassroots movements.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Keith Chaput</p>
+  </footer>
+</body>
+</html>
