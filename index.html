@@ -106,31 +106,36 @@
     }
 
     nav a {
-      color: var(--text-light);
-      font-weight: 600;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 1rem;
-    }
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 
     nav a:hover {
-      text-decoration: underline;
-    }
+  transform: scale(1.1);
+  color: var(--highlight);
+}
 
     .social-icons {
       margin-top: 1rem;
     }
 
     .social-icons a {
-      color: var(--text-light);
-      font-size: 1.2rem;
-      margin: 0 0.5rem;
-      transition: transform 0.3s ease;
-    }
+  display: inline-block;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 
     .social-icons a:hover {
-      transform: scale(1.2);
-    }
+  transform: scale(1.4) rotate(-5deg);
+  color: var(--highlight);
+}
 
     .ridge-divider svg {
       display: block;
@@ -185,9 +190,9 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
-    }
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+}
 
     #contact form {
       margin-top: 2rem;
