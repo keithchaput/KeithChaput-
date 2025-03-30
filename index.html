@@ -209,13 +209,17 @@
   bottom: 1rem;
   right: 1rem;
   display: flex;
-  gap: 0.75rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
   z-index: 10;
 }
 .header-social-icons a {
   font-size: 1.4rem;
   color: white;
   text-decoration: none;
+  margin-left: 0.5rem;
   transition: color 0.3s ease;
 }
 .header-social-icons a:hover {
@@ -297,7 +301,7 @@
   <header>
     <img src="logo1.png" alt="Keith Chaput Logo">
     <h1 class="fade-in">Keith Chaput</h1>
-    <p class="fade-in call-to-action" style="animation-delay: 0.2s">Art for Solidarity. Power in Print.</p>
+    <p class="fade-in call-to-action" style="animation-delay: 0.2s">Art for Solidarity.</p>
     <nav class="fade-in" style="animation-delay: 0.3s">
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -315,7 +319,7 @@
   <main class="container">
     <section id="about" class="fade-in" style="animation-delay: 0.4s">
       <h2>About</h2>
-      <p>Hi, I’m Keith Chaput — a digital artist creating bold, accessible designs for progressive activism. Inspired by political pop art and the iconic WPA posters, my work is meant to support grassroots campaigns, policy education, and movements for justice. Everything here is free to use — because solidarity should be beautiful <em>and</em> accessible.</p>
+      <p>Hi, I’m a digital artist creating bold, accessible designs for progressive activism. My work is meant to support grassroots campaigns, policy education, progressive movements. Everything here is free to use — because solidarity should be <em>and</em> accessible.</p>
     </section>
 
     <section id="gallery" class="fade-in" style="animation-delay: 0.5s">
@@ -360,7 +364,7 @@
     </section>
   </main>
 
-  <footer>$1
+  <footer>Donate to Support my Work
   <div class="footer-donate-icons">
     <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
       <i class="fab fa-paypal"></i>
