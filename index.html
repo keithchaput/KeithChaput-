@@ -48,11 +48,14 @@
 
     header {
   background: url('bannerbackground.png') center top no-repeat;
-  background-size: cover;
+  background-size: 100% 300px;
+  background-repeat: no-repeat;
   color: var(--text-light);
   text-align: center;
   padding: 8rem 1rem 6rem;
   position: relative;
+  overflow: hidden;
+  height: 300px;
 }
 
     header::after {
@@ -297,7 +300,7 @@
       <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
     </div>
     
-  <div class="ridge-divider" style="position: relative; z-index: 1; margin-top: -1px;">
+  <div class="ridge-divider" style="position: relative; z-index: 2; margin-top: -1px;">
   <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px;">
     <path d="M0,80 C360,140 1080,0 1440,80 L1440,0 L0,0 Z" fill="#fff7ed">
       <animate attributeName="d" dur="14s" repeatCount="indefinite" values="
