@@ -29,10 +29,28 @@
     }
 
     header {
-      background: var(--accent);
+      background: url('images/432db61e-9912-422a-b41a-fbd655669a08-Photoroom.png') center/cover no-repeat;
       color: var(--text-light);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(24, 49, 79, 0.6);
+      z-index: 0;
+    }
+
+    header h1,
+    .tagline {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
