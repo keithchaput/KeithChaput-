@@ -38,6 +38,8 @@
     }
 
     body {
+  font-size: 1.1rem;
+  letter-spacing: 0.01rem;
       background: var(--main-bg) url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
       font-family: 'Work Sans', sans-serif;
       color: var(--text-dark);
@@ -209,19 +211,21 @@
     }
 
     #contact button {
-      background: var(--highlight);
-      color: var(--text-light);
-      font-weight: bold;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+  background: var(--highlight);
+  color: var(--text-light);
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
 
     #contact button:hover {
-      background: #a23220;
-    }
+  background: #a23220;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
     footer {
       text-align: center;
@@ -270,6 +274,7 @@
   <header>
     <h1>Keith Chaput</h1>
     <p class="tagline">Welcome.</p>
+    <p class="hero-pitch" style="font-size: 1.4rem; font-weight: 600; max-width: 600px; margin: 0 auto 2rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Designing bold visuals for radical change.</p>
     <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
     <nav>
       <a href="#about">About</a>
