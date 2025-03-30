@@ -67,16 +67,6 @@
       font-size: 3rem;
       margin-bottom: 0.5rem;
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-      animation: popIn 1.2s ease-out forwards;
-      transform: translateY(-10px);
-      opacity: 0;
-    }
-
-    @keyframes popIn {
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
     }
 
     .tagline {
@@ -151,18 +141,9 @@
 
     h2 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
       color: var(--accent);
-      border-bottom: 2px solid var(--highlight);
-      padding-bottom: 0.5rem;
-    }
-
-    .about p, .contact p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
     }
 
     .grid {
@@ -232,22 +213,68 @@
       background: var(--accent);
       color: var(--text-light);
     }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 6rem 1rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .tagline {
+        font-size: 1rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .card {
+        padding: 1.5rem;
+        font-size: 1rem;
+      }
+      section {
+        padding: 2rem 1rem;
+        margin: 2rem 1rem;
+      }
+      footer {
+        font-size: 0.9rem;
+      }
+    }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
     <h1>Keith Chaput</h1>
     <p class="tagline">Welcome.</p>
     <nav>
-  <a href="blog.html">Blog</a>
-  <a href="#about">About</a>
-  <a href="#gallery">Work</a>
-  <a href="#contact">Contact</a>
-</nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Work</a>
+      <a href="#contact">Contact</a>
+      <a href="blog.html">Blog</a>
+    </nav>
     <div class="social-icons">
-      <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://patreon.com/yourusername" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+      <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
     </div>
   </header>
 
@@ -262,12 +289,12 @@
     </svg>
   </div>
 
-  <section id="about" class="about">
+  <section id="about">
     <h2>About Me</h2>
-    <p>..........................................</p>
+    <p>I’m Keith, a designer and visual storyteller focused on bold political communication and grassroots aesthetics. My work blends retro propaganda with modern tools to empower movements and shift narratives.</p>
   </section>
 
-  <section id="gallery" class="gallery">
+  <section id="gallery">
     <h2>Selected Work</h2>
     <div class="grid">
       <div class="card">Project 1</div>
@@ -276,7 +303,7 @@
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Contact</h2>
     <p>Reach out for collaborations, commissions, or just to say hello.</p>
     <form>
@@ -290,23 +317,5 @@
   <footer>
     <p>&copy; 2025 Keith Chaput</p>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll("section");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    });
-  </script>
 </body>
 </html>
