@@ -205,13 +205,17 @@
 }
     }
   .header-social-icons {
-  display: inline-block;
-  margin-left: 1.5rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
 }
 .header-social-icons a {
-  margin: 0 0.3rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: white;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 .header-social-icons a:hover {
@@ -299,11 +303,12 @@
       <a href="#gallery">Gallery</a>
       <a href="#donate">Donate</a>
       <a href="#contact">Contact</a>
-      <span class="header-social-icons">
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
-      </span>
+      <div class="header-social-icons">
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://x.com" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+  <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+</div>
     </nav>
 </header>
 
@@ -316,9 +321,11 @@
     <section id="gallery" class="fade-in" style="animation-delay: 0.5s">
       <h2>Gallery</h2>
       <div class="gallery">
-  <a href="edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png" onclick="openLightbox(event, 'edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png')">
-    <img src="solidarity-thumb.jpg" alt="Solidarity in the Workplace">
-  </a>
+  <div style="grid-column: span 2;">
+    <a href="edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png" onclick="openLightbox(event, 'edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png')">
+      <img src="solidarity-thumb.jpg" alt="Solidarity in the Workplace">
+    </a>
+  </div>
   <a href="db212356-a44f-4caa-9dea-7b94fb7b3f4d.png" onclick="openLightbox(event, 'db212356-a44f-4caa-9dea-7b94fb7b3f4d.png')">
     <img src="citizens-thumb.jpg" alt="Overturn Citizens United">
   </a>
