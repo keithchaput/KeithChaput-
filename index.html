@@ -47,12 +47,13 @@
     }
 
     header {
-      background: url('bannerbackground.png') center/cover no-repeat;
-      color: var(--text-light);
-      text-align: center;
-      padding: 10rem 1rem;
-      position: relative;
-    }
+  background: url('bannerbackground.png') center top no-repeat;
+  background-size: cover;
+  color: var(--text-light);
+  text-align: center;
+  padding: 8rem 1rem 6rem;
+  position: relative;
+}
 
     header::after {
       content: "";
@@ -269,20 +270,19 @@
       }
     }
       .desktop-only {
-      display: block;
-    }
+  display: block;
+}
 
     @media (max-width: 768px) {
-      .desktop-only {
-        display: none;
-      }
-    }
+  .desktop-only {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
   <header>
     <h1>Keith Chaput</h1>
-    <p class="tagline"></p>
     <p class="hero-pitch" style="font-size: 1.4rem; font-weight: 600; max-width: 600px; margin: 0 auto 2rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Designing bold visuals for radical change.</p>
     <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
     <nav>
