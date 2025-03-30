@@ -8,10 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #f7e0a3;
-      --accent: #18314f;
-      --highlight: #c1440e;
-      --text-dark: #1c1c1c;
+      --main-bg: #ede4d1;
+      --accent: #14325c;
+      --highlight: #c0402a;
+      --text-dark: #1b1b1b;
       --text-light: #ffffff;
     }
 
@@ -28,8 +28,29 @@
       line-height: 1.6;
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    nav a {
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     header {
-      background: url('bannerbackground.png') center/cover no-repeat;
+      background: url('BannerBackground.png') center/cover no-repeat;
       color: var(--text-light);
       text-align: center;
       padding: 4rem 1rem;
@@ -43,12 +64,13 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(24, 49, 79, 0.25); /* Lightened from 0.6 to 0.25 */
+      background: rgba(20, 50, 92, 0.25);
       z-index: 0;
     }
 
     header h1,
-    .tagline {
+    .tagline,
+    nav {
       position: relative;
       z-index: 1;
     }
@@ -62,7 +84,7 @@
     .tagline {
       font-weight: 300;
       font-size: 1.2rem;
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
     .hero {
@@ -119,18 +141,19 @@
   <header>
     <h1>Keith Chaput</h1>
     <p class="tagline">Design. Politics. Print Power.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to my world of bold, people-powered design.</h2>
-  </section>
-
-  <section class="about">
+  <section id="about" class="about">
     <h2>About Me</h2>
     <p>I’m a graphic artist and political communicator with a love for WPA-era posters, propaganda aesthetics, and making left-wing ideas visible and vibrant.</p>
   </section>
 
-  <section class="gallery">
+  <section id="gallery" class="gallery">
     <h2>Selected Work</h2>
     <div class="grid">
       <div class="card">Project 1</div>
@@ -139,7 +162,7 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:keith@example.com">keith@example.com</a></p>
   </section>
