@@ -33,93 +33,6 @@
       line-height: 1.7;
     }
 
-    header {
-      background: url('bannerbackground.png') center/contain no-repeat;
-      background-size: 100% auto;
-      background-position: top center;
-      color: var(--text-light);
-      text-align: center;
-      padding: 10rem 1rem;
-      position: relative;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(20, 50, 92, 0.25);
-      z-index: 0;
-    }
-
-    header h1,
-    header .tagline,
-    header nav,
-    .social-icons {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-      animation: popIn 1.2s ease-out forwards;
-      transform: translateY(-10px);
-      opacity: 0;
-    }
-
-    @keyframes popIn {
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .tagline {
-      font-weight: 300;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    nav a {
-      color: var(--text-light);
-      font-weight: 600;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .social-icons {
-      margin-top: 1rem;
-    }
-
-    .social-icons a {
-      color: var(--text-light);
-      font-size: 1.2rem;
-      margin: 0 0.5rem;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
     section {
       padding: 4rem 1.5rem;
       max-width: 900px;
@@ -138,40 +51,7 @@
     }
 
     h2 {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      border-bottom: 2px solid var(--highlight);
-      padding-bottom: 0.5rem;
-    }
 
-    .about p, .contact p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 3px solid var(--accent);
-      padding: 2rem;
-      text-align: center;
-      font-weight: 600;
-      box-shadow: 6px 6px 0px var(--highlight);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     #contact form {
@@ -213,14 +93,35 @@
     #contact button:hover {
       background: #a23220;
     }
+    .ridge-divider svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+  }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--accent);
-      color: var(--text-light);
-    }
-  </style>
+  .ridge-divider {
+    line-height: 0;
+    position: relative;
+    background: none;
+  }
+</style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -238,7 +139,17 @@
     </div>
   </header>
 
-  <section id="about" class="about">
+  <div class="ridge-divider">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+    <path d="M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z" fill="#fff7ed">
+      <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+        M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z;
+        M0,100 C300,50 600,140 900,70 C1200,0 1500,120 1800,50 L1440,0 L0,0 Z;
+        M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z" />
+    </path>
+  </svg>
+</div>
+<section id="about" class="about">
     <h2>About Me</h2>
     <p>I’m Keith, a designer and visual storyteller focused on bold political communication and grassroots aesthetics. My work blends retro propaganda with modern tools to empower movements and shift narratives.</p>
   </section>
@@ -266,23 +177,5 @@
   <footer>
     <p>&copy; 2025 Keith Chaput</p>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll("section");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    });
-  </script>
 </body>
 </html>
