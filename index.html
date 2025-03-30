@@ -224,6 +224,20 @@
 .contact-form button:hover {
   background: var(--dark-blue);
 }
+.contact-section {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+footer .container p:last-child {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+}
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -307,7 +321,7 @@
 </div>
     </section>
 
-    <section id="contact" class="fade-in" style="animation-delay: 0.7s">
+    <section id="contact" class="fade-in contact-section" style="animation-delay: 0.7s">
   <h2>Contact</h2>
   <p>Want to collaborate, request a design, or just say hi? Drop me a message below:</p>
   <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
@@ -323,15 +337,15 @@
 
   <footer>
   <div class="container">
-    <p>Donate to Support My Work</p>
-    <div class="footer-donate-icons">
-      <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
-        <i class="fab fa-paypal"></i>
-      </a>
-      <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Support on Patreon">
-        <i class="fab fa-patreon"></i>
-      </a>
-    </div>
+    <p style="text-align: center;">Donate to Support My Work</p>
+    <div class="footer-donate-icons" style="text-align: center;">
+  <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
+    <i class="fab fa-paypal"></i>
+  </a>
+  <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Support on Patreon">
+    <i class="fab fa-patreon"></i>
+  </a>
+</div>
     <p xmlns:cc="http://creativecommons.org/ns#" style="text-align: center;"><a rel="cc:attributionURL" href="https://keithchaput.github.io/KeithChaput-/">This work</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://keithchaput.github.io/KeithChaput-/">Keith Chaput</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
   </div>
 </footer>
@@ -346,3 +360,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </body>
+
