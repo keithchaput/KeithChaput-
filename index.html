@@ -10,456 +10,328 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.css" rel="stylesheet" />
   <style>
-  :root {
-    --red: #d72638;
-    --blue: #3f88c5;
-    --gold: #f49d37;
-    --green: #16697a;
-    --beige: #f4f1e6;
-    --textured: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-    --soft-red: #c7524b;
-    --dark-blue: #3b4d52;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Signika', sans-serif;
-    background: var(--beige) var(--textured);
-    color: var(--dark-blue);
-    line-height: 1.6;
-  }
-  header {
-    background: url('IMG_4218.JPG') center/cover no-repeat;
-    color: white;
-    padding: 6rem 1rem 4rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-  header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-  }
-  header img {
-  height: 90px;
-  margin-bottom: 1rem;
-  border-radius: 50%;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-  animation: popIn 0.8s ease forwards;
-  opacity: 0;
-  transform: scale(0.8);
-}
-  header h1 {
-  font-family: 'Staatliches', sans-serif;
-  margin: 0.25rem 0;
-  font-size: 3.5rem;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  color: var(--soft-red);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-  }
-  nav a:hover {
-    color: var(--gold);
-  }
-  .container {
-    padding: 3rem 1rem;
-    max-width: 1100px;
-    margin: auto;
-  }
-  h2 {
-    font-family: 'Staatliches', sans-serif;
-    color: var(--soft-red);
-    font-size: 2.4rem;
-    border-left: 6px solid var(--gold);
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    padding: 0.5rem;
-  }
-  .gallery a {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease-in-out;
-    display: block;
-  }
-  .gallery img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: contain;
-    display: block;
-    border-radius: 6px;
-    transition: transform 0.3s;
-  }
-  .donate-buttons a,
-  .footer-donate-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: var(--soft-red);
-    color: white;
-    margin: 0.5rem 1rem 0.5rem 0;
-    text-decoration: none;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  .donate-buttons a:hover,
-  .footer-donate-icons a:hover {
-    background: var(--dark-blue);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-  }
-  .header-social-icons {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    z-index: 10;
-  }
-  .header-social-icons a {
-    font-size: 1.4rem;
-    color: white;
-    text-decoration: none;
-    margin-left: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s forwards;
-  }
-  @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes popIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-  }
-  body.dark-mode {
-    background: #1e1e1e;
-    color: #f0f0f0;
-  }
-  body.dark-mode header::before {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  body.dark-mode nav a,
-  body.dark-mode .donate-buttons a,
-  body.dark-mode .social-icons a {
-    color: #f0f0f0;
-  }
-  body.dark-mode .donate-buttons a {
-    background: #444;
-  }
-  body.dark-mode footer {
-  border-top: 4px solid var(--soft-red);
-    background: #2c2c2c;
-  }
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 2rem auto;
-}
-.contact-form .form-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-.contact-form .form-row input {
-  flex: 1;
-}
-.contact-form button {
-  background: var(--soft-red);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  align-self: flex-start;
-  transition: background 0.3s ease;
-}
-.contact-form button:hover {
-  background: var(--dark-blue);
-}
-.contact-section {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 3rem 2rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-footer .container p:last-child {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #777;
-  text-align: center;
-}
-.footer-donate-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-footer p {
-  text-align: center;
-  margin: 0.5rem auto;
-}
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.createElement('button');
-    toggle.innerHTML = '<i class="fas fa-moon"></i>';
-    toggle.setAttribute('aria-label', 'Toggle Dark Mode');
-    toggle.style.position = 'fixed';
-    toggle.style.top = '1rem';
-    toggle.style.right = '1rem';
-    toggle.style.zIndex = '9999';
-    toggle.style.background = '#333';
-    toggle.style.color = '#fff';
-    toggle.style.border = 'none';
-    toggle.style.padding = '0.75rem';
-    toggle.style.borderRadius = '50%';
-    toggle.style.cursor = 'pointer';
-    toggle.style.fontSize = '1.2rem';
-
-    toggle.onclick = () => {
-      document.body.classList.toggle('dark-mode');
-      toggle.innerHTML = document.body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    };
-
-    document.body.appendChild(toggle);
-  });
-</script>
-
-<style>
-  #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--beige);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
-  #preloader h1 {
-    font-family: 'Staatliches', sans-serif;
-    font-size: 2.5rem;
-    color: var(--soft-red);
-    animation: fadeIn 1s ease-in-out;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-.gallery a::after {
-  content: '→';
-  position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
-  font-size: 1.5rem;
-  color: rgba(255,255,255,0.9);
-  background: rgba(0,0,0,0.5);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.gallery a:hover::after {
-  opacity: 1;
-}
-nav a.active {
-  border-bottom: 2px solid var(--gold);
-  color: var(--gold);
-}
-html {
-  scroll-behavior: smooth;
-}
-.call-to-action {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--gold);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-  margin-top: 0.5rem;
-  animation-delay: 0.2s;
-}
-</style>
-</head>
-<body>
-  <div id="preloader"><h1>Keith Chaput Designs</h1></div>
-  <header>
-    
-    <h1 class="fade-in">Keith Chaput</h1>
-    <p class="fade-in call-to-action">Illustrating the Revolution</p>
-    <nav class="fade-in" style="animation-delay: 0.3s">
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#donate">Donate</a>
-      <a href="#contact">Contact</a>
-      
-      </nav>
-  <div class="header-social-icons">
-    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/keithchaput" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
-  </div>
-</header>
-
-  <main class="container">
-    <section id="about" class="fade-in" style="animation-delay: 0.4s">
-      <h2>About</h2>
-      <p>Hi, I’m a digital artist creating accessible designs for progressive activism. My work is meant to support grassroots campaigns, policy education, progressive movements. Everything here is free to use — because solidarity should be accessible.</p>
-    </section>
-
-    <section id="gallery" class="fade-in" style="animation-delay: 0.5s">
-      <h2>Gallery</h2>
-      <div class="gallery">
-  <div style="grid-column: span 2;">
-    <a href="edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png" onclick="openLightbox(event, 'edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png')">
-      <img src="solidarity-thumb.jpg" alt="Solidarity in the Workplace">
-    </a>
-  </div>
-  <a href="db212356-a44f-4caa-9dea-7b94fb7b3f4d.png" onclick="openLightbox(event, 'db212356-a44f-4caa-9dea-7b94fb7b3f4d.png')">
-    <img src="citizens-thumb.jpg" alt="Overturn Citizens United">
-  </a>
-  <a href="d4090b97-9458-413d-8cac-0e001e3a3aac.png" onclick="openLightbox(event, 'd4090b97-9458-413d-8cac-0e001e3a3aac.png')">
-    <img src="healthcare-thumb.jpg" alt="Healthcare is a Human Right">
-  </a>
-</div>
-    </section>
-
-    <section id="donate" class="fade-in" style="animation-delay: 0.6s">
-      <h2>Support This Work</h2>
-      <p>All of my designs are free to use. If you'd like to support my work, you can donate via PayPal or on Patreon. Thank you!</p>
-      <div class="donate-buttons">
-  <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
-    <i class="fab fa-paypal"></i>
-  </a>
-  <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Support on Patreon">
-    <i class="fab fa-patreon"></i>
-  </a>
-</div>
-    </section>
-
-    <section id="contact" class="fade-in contact-section" style="animation-delay: 0.7s">
-  <h2>Contact</h2>
-  <p>Want to collaborate, request a design, or just say hi? Drop me a message below:</p>
-  <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
-    <div class="form-row">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-    </div>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-  </main>
-
-  <footer>
-  <div class="container">
-    <p style="text-align: center;">Donate to Support My Work</p>
-    <div class="footer-donate-icons">
-  <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
-    <i class="fab fa-paypal"></i>
-  </a>
-  <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Support on Patreon">
-    <i class="fab fa-patreon"></i>
-  </a>
-</div>
-    <p xmlns:cc="http://creativecommons.org/ns#" style="text-align: center;"><a rel="cc:attributionURL" href="https://keithchaput.github.io/KeithChaput-/">This work</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://keithchaput.github.io/KeithChaput-/">Keith Chaput</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
-  </div>
-</footer>
-
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  window.openLightbox = function(e, src) {
-  e.preventDefault();
-  const altText = e.currentTarget.querySelector('img').alt || '';
-  const instance = basicLightbox.create(`
-    <div style="position: relative; text-align: center; max-width: 90vw;">
-      <img src="${src}" style="max-height: 85vh; width: auto;">
-      <p style="margin-top: 0.75rem; color: white; font-size: 1rem;">${altText}</p>
-    </div>
-  `);
-  instance.show();
-}" style="max-width: 90vw; max-height: 90vh;">`);
-    instance.show();
-  }
-});
-</script>
-<script>
-  window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-      preloader.style.opacity = '0';
-      setTimeout(() => preloader.remove(), 500);
+    :root {
+      --red: #d72638;
+      --blue: #3f88c5;
+      --gold: #f49d37;
+      --green: #16697a;
+      --beige: #f4f1e6;
+      --textured: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+      --soft-red: #c7524b;
+      --dark-blue: #3b4d52;
     }
-  });
-</script>
-<script>
-  const navLinks = document.querySelectorAll('nav a');
-  const sections = Array.from(document.querySelectorAll('main section'));
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY + window.innerHeight / 2;
-    sections.forEach(section => {
-      const id = section.getAttribute('id');
-      const link = document.querySelector(`nav a[href="#${id}"]`);
-      if (link) {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        link.classList.toggle('active', scrollPos >= top && scrollPos < bottom);
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Signika', sans-serif;
+      background: var(--beige) var(--textured);
+      color: var(--dark-blue);
+      line-height: 1.6;
+    }
+    header {
+      background: url('IMG_4218.JPG') center/cover no-repeat;
+      color: white;
+      padding: 6rem 1rem 4rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+    header img {
+      height: 90px;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      animation: popIn 0.8s ease forwards;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    header h1 {
+      font-family: 'Staatliches', sans-serif;
+      margin: 0.25rem 0;
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      color: var(--soft-red);
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+    nav {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--gold);
+    }
+    nav a.active {
+      border-bottom: 2px solid var(--gold);
+      color: var(--gold);
+    }
+    .header-social-icons {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+    .header-social-icons a {
+      font-size: 1.4rem;
+      color: white;
+      text-decoration: none;
+      margin-left: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    .container {
+      padding: 3rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      font-family: 'Staatliches', sans-serif;
+      color: var(--soft-red);
+      font-size: 2.4rem;
+      border-left: 6px solid var(--gold);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 0.5rem;
+    }
+    .gallery a {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease-in-out;
+      display: block;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.3s;
+    }
+    .gallery a::after {
+      content: '→';
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.5);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery a:hover::after {
+      opacity: 1;
+    }
+    .donate-buttons a,
+    .footer-donate-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--soft-red);
+      color: white;
+      margin: 0.5rem 1rem 0.5rem 0;
+      text-decoration: none;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .donate-buttons a:hover,
+    .footer-donate-icons a:hover {
+      background: var(--dark-blue);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
+    @keyframes popIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    body.dark-mode {
+      background: #1e1e1e;
+      color: #f0f0f0;
+    }
+    body.dark-mode header::before {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    body.dark-mode nav a,
+    body.dark-mode .donate-buttons a,
+    body.dark-mode .social-icons a {
+      color: #f0f0f0;
+    }
+    body.dark-mode .donate-buttons a {
+      background: #444;
+    }
+    body.dark-mode footer {
+      border-top: 4px solid var(--soft-red);
+      background: #2c2c2c;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .contact-form .form-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .contact-form .form-row input {
+      flex: 1;
+    }
+    .contact-form button {
+      background: var(--soft-red);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: var(--dark-blue);
+    }
+    .contact-section {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+    footer .container p:last-child {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+      text-align: center;
+    }
+    .footer-donate-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    footer p {
+      text-align: center;
+      margin: 0.5rem auto;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .call-to-action {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      margin-top: 0.5rem;
+      animation-delay: 0.2s;
+    }
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #preloader h1 {
+      font-family: 'Staatliches', sans-serif;
+      font-size: 2.5rem;
+      color: var(--soft-red);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.createElement('button');
+      toggle.innerHTML = '<i class="fas fa-moon"></i>';
+      toggle.setAttribute('aria-label', 'Toggle Dark Mode');
+      toggle.style.position = 'fixed';
+      toggle.style.top = '1rem';
+      toggle.style.right = '1rem';
+      toggle.style.zIndex = '9999';
+      toggle.style.background = '#333';
+      toggle.style.color = '#fff';
+      toggle.style.border = 'none';
+      toggle.style.padding = '0.75rem';
+      toggle.style.borderRadius = '50%';
+      toggle.style.cursor = 'pointer';
+      toggle.style.fontSize = '1.2rem';
+      toggle.onclick = () => {
+        document.body.classList.toggle('dark-mode');
+        toggle.innerHTML = document.body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      };
+      document.body.appendChild(toggle);
     });
-  });
-</script>
-</body>
+  </script>
+</head>
