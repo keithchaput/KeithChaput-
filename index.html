@@ -231,18 +231,7 @@
     }
 
     @media (max-width: 768px) {
-      .social-icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
-        padding: 0.5rem 0;
-        position: absolute;
-        top: 140px;
-        width: 100%;
-        background: var(--accent);
-      }
-
-      .menu-toggle {
+.menu-toggle {
         display: block;
       }
 
@@ -288,11 +277,7 @@
       <a href="#contact">Contact</a>
       <a href="blog.html">Blog</a>
     </nav>
-    <div class="social-icons">
-      <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
-    </div>
+    
   </header>
 
   <main>
@@ -324,7 +309,12 @@
 
   <footer>
     <p>&copy; 2025 Keith Chaput</p>
-  </footer>
+  <div class="social-icons">
+  <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
+</div>
+</footer>
 
   <script>
     const staggerElements = (parent) => {
