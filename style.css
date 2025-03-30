@@ -41,7 +41,7 @@ nav a:hover {
 }
 
 header {
-  background: url('BannerBackground.png') center/contain no-repeat;
+  background: url('bannerbackground.png') center/contain no-repeat;
   background-size: 100% auto;
   background-position: top center;
   color: var(--text-light);
