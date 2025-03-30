@@ -58,14 +58,12 @@
   transform: scale(0.8);
 }
   header h1 {
-  font-family: 'Staatliches', sans-serif;
-  margin: 0.25rem 0;
-  font-size: 3.5rem;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  color: var(--soft-red);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
+  border: 2px solid #f4f1e6;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  $1
   nav a {
     color: white;
     text-decoration: none;
@@ -421,8 +419,7 @@ html {
 </footer>
 
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  window.openLightbox = function(e, src) {
+window.openLightbox = function(e, src) {
   e.preventDefault();
   const altText = e.currentTarget.querySelector('img').alt || '';
   const instance = basicLightbox.create(`
@@ -433,7 +430,6 @@ document.addEventListener('DOMContentLoaded', () => {
   `);
   instance.show();
 }
-});
 </script>
 <script>
   window.addEventListener('load', () => {
@@ -461,4 +457,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 </body>
-
