@@ -94,3 +94,171 @@
     }
     .gallery {
       display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .gallery a {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery a:hover {
+      transform: scale(1.04);
+    }
+    .gallery img {
+  width: 100%;
+  max-height: 300px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+    .donate-buttons a {
+      display: inline-block;
+      background: var(--leaf-green);
+      color: white;
+      padding: 0.9rem 1.8rem;
+      margin: 0.5rem 1rem 0.5rem 0;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .donate-buttons a:hover {
+      background: var(--light-blue);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+    form input,
+    form textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form button {
+      background: var(--soft-red);
+      color: white;
+      padding: 0.75rem;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: var(--light-blue);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      font-size: 1rem;
+      background-color: #eee;
+      margin-top: 5rem;
+    }
+    .social-icons {
+      margin: 1rem 0;
+    }
+    .social-icons a {
+      color: var(--dark-blue);
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: var(--soft-red);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo1.png" alt="Keith Chaput Logo">
+    <h1 class="fade-in">Keith Chaput</h1>
+    <p class="fade-in call-to-action" style="animation-delay: 0.2s">Art for Solidarity. Power in Print.</p>
+    <nav class="fade-in" style="animation-delay: 0.3s">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#donate">Donate</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="about" class="fade-in" style="animation-delay: 0.4s">
+      <h2>About</h2>
+      <p>Hi, I’m Keith Chaput — a digital artist creating bold, accessible designs for progressive activism. Inspired by political pop art and the iconic WPA posters, my work is meant to support grassroots campaigns, policy education, and movements for justice. Everything here is free to use — because solidarity should be beautiful <em>and</em> accessible.</p>
+    </section>
+
+    <section id="gallery" class="fade-in" style="animation-delay: 0.5s">
+      <h2>Gallery</h2>
+      <div class="gallery">
+  <a href="edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png" onclick="openLightbox(event, 'edcb3bd6-73f3-49fd-8c27-d03211da6803-Photoroom.png')">
+    <img src="solidarity-thumb.jpg" alt="Solidarity in the Workplace">
+  </a>
+  <a href="db212356-a44f-4caa-9dea-7b94fb7b3f4d.png" onclick="openLightbox(event, 'db212356-a44f-4caa-9dea-7b94fb7b3f4d.png')">
+    <img src="citizens-thumb.jpg" alt="Overturn Citizens United">
+  </a>
+  <a href="d4090b97-9458-413d-8cac-0e001e3a3aac.png" onclick="openLightbox(event, 'd4090b97-9458-413d-8cac-0e001e3a3aac.png')">
+    <img src="healthcare-thumb.jpg" alt="Healthcare is a Human Right">
+  </a>
+</div>
+    </section>
+
+    <section id="donate" class="fade-in" style="animation-delay: 0.6s">
+      <h2>Support This Work</h2>
+      <p>All of my designs are free to use. If you'd like to support my work, you can donate via PayPal or become a patron on Patreon. Thank you!</p>
+      <div class="donate-buttons">
+        <a href="https://paypal.me/chaputk" target="_blank">Donate with PayPal</a>
+        <a href="https://patreon.com/designsbykeith" target="_blank">Support on Patreon</a>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in" style="animation-delay: 0.7s">
+      <h2>Contact</h2>
+      <p>Want to collaborate, request a design, or just say hi? Drop me a message below:</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+    </div>
+    &copy; 2025 Keith Chaput. All artwork free to use.
+  </footer>
+
+  <script>
+    function openLightbox(e, src) {
+      e.preventDefault();
+      const instance = basicLightbox.create(`<img src="${src}" style="max-width: 90vw; max-height: 90vh;">`);
+      instance.show();
+    }
+  </script>
+</body>
