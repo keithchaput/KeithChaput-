@@ -420,17 +420,13 @@ html {
 </footer>
 
   <script>
-window.openLightbox = function(e, src) {
-  e.preventDefault();
-  const altText = e.currentTarget.querySelector('img').alt || '';
-  const instance = basicLightbox.create(`
-    <div style="position: relative; text-align: center; max-width: 90vw;">
-      <img src="${src}" style="max-height: 85vh; width: auto;">
-      <p style="margin-top: 0.75rem; color: white; font-size: 1rem;">${altText}</p>
-    </div>
-  `);
-  instance.show();
-}
+document.addEventListener('DOMContentLoaded', () => {
+  window.openLightbox = function(e, src) {
+    e.preventDefault();
+    const instance = basicLightbox.create(`<img src="${src}" style="max-width: 90vw; max-height: 90vh;">`);
+    instance.show();
+  };
+});
 </script>
 <script>
   window.addEventListener('load', () => {
