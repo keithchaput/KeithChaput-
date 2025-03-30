@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="description" content="The official portfolio and blog of Keith Chaput – digital artist, designer, and political. View work, read thoughts, and get in touch." />
+  <meta property="og:title" content="Keith Chaput Portfolio & Blog" />
+  <meta property="og:description" content="Design, politics, and visual storytelling by Keith Chaput." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://keithchaput.github.io/bannerbackground.png" />
+  <meta property="og:url" content="https://keithchaput.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" as="style">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Keith Chaput">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Keith Chaput</title>
@@ -248,6 +260,40 @@
         font-size: 0.9rem;
       }
     }
+      @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 2rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 999;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background: var(--accent);
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      nav.show {
+        display: flex;
+      }
+    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -267,10 +313,8 @@
   </script>
 </head>
 <body>
-  <header>
-    <h1>Keith Chaput</h1>
-    <p class="tagline">Welcome.</p>
-    <nav>
+  <main role="main">
+  <header>$1<button class="menu-toggle" aria-label="Toggle Menu">☰</button><nav
       <a href="#about">About</a>
       <a href="#gallery">Work</a>
       <a href="#contact">Contact</a>
@@ -322,5 +366,13 @@
   <footer>
     <p>&copy; 2025 Keith Chaput</p>
   </footer>
+<script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
+  </main>
 </body>
 </html>
