@@ -58,12 +58,14 @@
   transform: scale(0.8);
 }
   header h1 {
-    font-family: 'Staatliches', sans-serif;
-    margin: 0.25rem 0;
-    font-size: 3rem;
-    letter-spacing: 1px;
-    color: var(--beige);
-  }
+  font-family: 'Staatliches', sans-serif;
+  margin: 0.25rem 0;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: var(--soft-red);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
   nav a {
     color: white;
     text-decoration: none;
@@ -323,6 +325,14 @@ nav a.active {
 html {
   scroll-behavior: smooth;
 }
+.call-to-action {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 0.5rem;
+  animation-delay: 0.2s;
+}
 </style>
 </head>
 <body>
@@ -330,7 +340,7 @@ html {
   <header>
     
     <h1 class="fade-in">Keith Chaput</h1>
-    <p class="fade-in call-to-action" style="animation-delay: 0.2s">Illustrating the Revolution</p>
+    <p class="fade-in call-to-action">Illustrating the Revolution</p>
     <nav class="fade-in" style="animation-delay: 0.3s">
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
