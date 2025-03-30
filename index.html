@@ -38,6 +38,8 @@
     }
 
     body {
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-repeat: repeat;
       font-family: 'Work Sans', sans-serif;
       background: var(--main-bg);
       color: var(--text-dark);
@@ -162,9 +164,10 @@
     }
 
     section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
 
     h2 {
       font-family: 'Archivo Black', sans-serif;
@@ -296,15 +299,10 @@
   </header>
 
   <div class="ridge-divider">
-    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
-      <path d="M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z" fill="#fff7ed">
-        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
-          M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z;
-          M0,100 C300,50 600,140 900,70 C1200,0 1500,120 1800,50 L1440,0 L0,0 Z;
-          M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z" />
-      </path>
-    </svg>
-  </div>
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,100 C100,50 300,150 500,50 C700,-50 900,150 1100,50 C1300,-50 1440,100 1440,100 L1440,0 L0,0 Z" fill="#fff7ed"></path>
+  </svg>
+</div>
 
   <main>
     <section id="about">
@@ -338,6 +336,12 @@
   </footer>
 
   <script>
+    const staggerElements = (parent) => {
+      const children = parent.querySelectorAll('.card, p, h2');
+      children.forEach((el, i) => {
+        el.style.transitionDelay = `${i * 100}ms`;
+      });
+    };
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("section");
       const observer = new IntersectionObserver(entries => {
@@ -350,6 +354,7 @@
       }, { threshold: 0.1 });
 
       sections.forEach(section => {
+        staggerElements(section);
         observer.observe(section);
       });
 
