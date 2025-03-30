@@ -118,6 +118,42 @@
     .categories li a:hover {
       background: rgba(192, 64, 42, 0.2);
     }
+      @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .categories ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      article,
+      .categories,
+      footer,
+      main {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      article h2 {
+        font-size: 1.5rem;
+      }
+
+      .categories li a {
+        display: block;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
