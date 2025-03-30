@@ -116,20 +116,26 @@
   border-radius: 6px;
 }
     .donate-buttons a {
-      display: inline-block;
-      background: var(--leaf-green);
-      color: white;
-      padding: 0.9rem 1.8rem;
-      margin: 0.5rem 1rem 0.5rem 0;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--soft-red);
+  color: white;
+  margin: 0.5rem 1rem 0.5rem 0;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
     .donate-buttons a:hover {
-      background: var(--light-blue);
-    }
+  background: var(--dark-blue);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  animation: bounce 0.4s ease;
+}
     form {
       display: flex;
       flex-direction: column;
@@ -183,25 +189,111 @@
       animation: fadeInUp 0.6s forwards;
     }
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-8px); }
+  60%  { transform: translateY(-4px); }
+  100% { transform: translateY(-6px); }
+}
     }
-  </style>
+  .header-social-icons {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+.header-social-icons a {
+  margin: 0 0.3rem;
+  font-size: 1.3rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.header-social-icons a:hover {
+  color: var(--soft-red);
+}
+.header-donate-icons, .footer-donate-icons {
+  margin-top: 1rem;
+}
+.header-donate-icons a,
+.footer-donate-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--soft-red);
+  color: white;
+  margin: 0 0.4rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.header-donate-icons a:hover,
+.footer-donate-icons a:hover {
+  background: var(--dark-blue);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.createElement('button');
+    toggle.textContent = 'Toggle Dark Mode';
+    toggle.style.position = 'fixed';
+    toggle.style.top = '1rem';
+    toggle.style.right = '1rem';
+    toggle.style.zIndex = '9999';
+    toggle.style.background = '#333';
+    toggle.style.color = '#fff';
+    toggle.style.border = 'none';
+    toggle.style.padding = '0.5rem 1rem';
+    toggle.style.borderRadius = '5px';
+    toggle.style.cursor = 'pointer';
+
+    toggle.onclick = () => {
+      document.body.classList.toggle('dark-mode');
+    };
+
+    document.body.appendChild(toggle);
+  });
+</script>
+<style>
+  body.dark-mode {
+    background: #1e1e1e;
+    color: #f0f0f0;
+  }
+  body.dark-mode header::before {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  body.dark-mode nav a,
+  body.dark-mode .donate-buttons a,
+  body.dark-mode .social-icons a {
+    color: #f0f0f0;
+  }
+  body.dark-mode .donate-buttons a {
+    background: #444;
+  }
+  body.dark-mode footer {
+    background: #2c2c2c;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <img src="logo1.png" alt="Keith Chaput Logo">
-    <h1 class="fade-in">Keith Chaput</h1>
-    <p class="fade-in call-to-action" style="animation-delay: 0.2s">Art for Solidarity. Power in Print.</p>
-    <nav class="fade-in" style="animation-delay: 0.3s">
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#donate">Donate</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <header>$1
+  <div class="header-donate-icons">
+    <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
+      <i class="fab fa-paypal"></i>
+    </a>
+    <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Support on Patreon">
+      <i class="fab fa-patreon"></i>
+    </a>
+  </div>
+</header>
 
   <main class="container">
     <section id="about" class="fade-in" style="animation-delay: 0.4s">
@@ -228,9 +320,13 @@
       <h2>Support This Work</h2>
       <p>All of my designs are free to use. If you'd like to support my work, you can donate via PayPal or become a patron on Patreon. Thank you!</p>
       <div class="donate-buttons">
-        <a href="https://paypal.me/chaputk" target="_blank">Donate with PayPal</a>
-        <a href="https://patreon.com/designsbykeith" target="_blank">Support on Patreon</a>
-      </div>
+  <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
+    <i class="fab fa-paypal"></i>
+  </a>
+  <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Support on Patreon">
+    <i class="fab fa-patreon"></i>
+  </a>
+</div>
     </section>
 
     <section id="contact" class="fade-in" style="animation-delay: 0.7s">
@@ -245,14 +341,16 @@
     </section>
   </main>
 
-  <footer>
-    <div class="social-icons">
-      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
-    </div>
-    &copy; 2025 Keith Chaput. All artwork free to use.
-  </footer>
+  <footer>$1
+  <div class="footer-donate-icons">
+    <a href="https://paypal.me/chaputk" target="_blank" aria-label="Donate with PayPal">
+      <i class="fab fa-paypal"></i>
+    </a>
+    <a href="https://patreon.com/designsbykeith" target="_blank" aria-label="Support on Patreon">
+      <i class="fab fa-patreon"></i>
+    </a>
+  </div>
+</footer>
 
   <script>
 document.addEventListener('DOMContentLoaded', () => {
