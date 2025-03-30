@@ -1,313 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="kc-logo.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keith Chaput – Political Art & Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Signika:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.css" rel="stylesheet" />
-  <style>
-    :root {
-      --red: #d72638;
-      --blue: #3f88c5;
-      --gold: #f49d37;
-      --green: #16697a;
-      --beige: #f4f1e6;
-      --textured: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-      --soft-red: #c7524b;
-      --dark-blue: #3b4d52;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Signika', sans-serif;
-      background: var(--beige) var(--textured);
-      color: var(--dark-blue);
-      line-height: 1.6;
-    }
-    header {
-      background: url('IMG_4218.JPG') center/cover no-repeat;
-      color: white;
-      padding: 6rem 1rem 4rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
-    }
-    header img {
-      height: 90px;
-      margin-bottom: 1rem;
-      border-radius: 50%;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-      animation: popIn 0.8s ease forwards;
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    header h1 {
-      font-family: 'Staatliches', sans-serif;
-      margin: 0.25rem 0;
-      font-size: 3.5rem;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      color: var(--soft-red);
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-    }
-    nav {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--gold);
-    }
-    nav a.active {
-      border-bottom: 2px solid var(--gold);
-      color: var(--gold);
-    }
-    .header-social-icons {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0.5rem;
-      z-index: 10;
-    }
-    .header-social-icons a {
-      font-size: 1.4rem;
-      color: white;
-      text-decoration: none;
-      margin-left: 0.5rem;
-      transition: color 0.3s ease;
-    }
-    .container {
-      padding: 3rem 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      font-family: 'Staatliches', sans-serif;
-      color: var(--soft-red);
-      font-size: 2.4rem;
-      border-left: 6px solid var(--gold);
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      padding: 0.5rem;
-    }
-    .gallery a {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease-in-out;
-      display: block;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: contain;
-      display: block;
-      border-radius: 6px;
-      transition: transform 0.3s;
-    }
-    .gallery a::after {
-      content: '→';
-      position: absolute;
-      bottom: 0.75rem;
-      right: 0.75rem;
-      font-size: 1.5rem;
-      color: rgba(255,255,255,0.9);
-      background: rgba(0,0,0,0.5);
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .gallery a:hover::after {
-      opacity: 1;
-    }
-    .donate-buttons a,
-    .footer-donate-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: var(--soft-red);
-      color: white;
-      margin: 0.5rem 1rem 0.5rem 0;
-      text-decoration: none;
-      font-size: 1.5rem;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-    .donate-buttons a:hover,
-    .footer-donate-icons a:hover {
-      background: var(--dark-blue);
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s forwards;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes popIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    footer {
-      border-top: 4px solid var(--soft-red);
-      background: #2c2c2c;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 600px;
-      margin: 2rem auto;
-    }
-    .contact-form .form-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-    .contact-form .form-row input {
-      flex: 1;
-    }
-    .contact-form button {
-      background: var(--soft-red);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      align-self: flex-start;
-      transition: background 0.3s ease;
-    }
-    .contact-form button:hover {
-      background: var(--dark-blue);
-    }
-    .contact-section {
-      background: rgba(255, 255, 255, 0.7);
-      padding: 3rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      margin-top: 4rem;
-      margin-bottom: 4rem;
-    }
-    footer .container p:last-child {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-      text-align: center;
-    }
-    .footer-donate-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    footer p {
-      text-align: center;
-      margin: 0.5rem auto;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    .call-to-action {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--gold);
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-      margin-top: 0.5rem;
-      animation-delay: 0.2s;
-    }
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--beige);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    #preloader h1 {
-      font-family: 'Staatliches', sans-serif;
-      font-size: 2.5rem;
-      color: var(--soft-red);
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <title>Keith Chaput</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Your content here -->
-  <div id="preloader">
-    <h1>Loading...</h1>
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.js"></script>
-  <script>
-    // Example script to hide preloader after page load
-    window.addEventListener('load', function() {
-      document.getElementById('preloader').style.display = 'none';
-    });
-  </script>
+  <header>
+    <h1>Keith Chaput</h1>
+    <p class="tagline">Design. Politics. Print Power.</p>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to my world of bold, people-powered design.</h2>
+  </section>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I’m a graphic artist and political communicator with a love for WPA-era posters, propaganda aesthetics, and making left-wing ideas visible and vibrant.</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Selected Work</h2>
+    <div class="grid">
+      <div class="card">Project 1</div>
+      <div class="card">Project 2</div>
+      <div class="card">Project 3</div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:keith@example.com">keith@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Keith Chaput</p>
+  </footer>
 </body>
 </html>
