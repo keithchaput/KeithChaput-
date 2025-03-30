@@ -7,7 +7,6 @@
   <title>Keith Chaput – Political Art & Design</title>
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Signika:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.css" rel="stylesheet" />
   <style>
     :root {
@@ -296,6 +295,19 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
+</head>
+<body>
+  <!-- Your content here -->
+  <div id="preloader">
+    <h1>Loading...</h1>
+  </div>
   
-</head></body>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.js"></script>
+  <script>
+    // Example script to hide preloader after page load
+    window.addEventListener('load', function() {
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
