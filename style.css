@@ -1,0 +1,130 @@
+:root {
+  --main-bg: #ede4d1;
+  --accent: #14325c;
+  --highlight: #c0402a;
+  --text-dark: #1b1b1b;
+  --text-light: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--main-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+nav a {
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: url('BannerBackground.png') center/contain no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+  color: var(--text-light);
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 50, 92, 0.25);
+  z-index: 0;
+}
+
+header h1,
+.tagline,
+nav {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-weight: 300;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.hero {
+  background: var(--highlight);
+  color: var(--text-light);
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+section {
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--text-light);
+  border: 3px solid var(--accent);
+  padding: 2rem;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 4px 4px 0px var(--highlight);
+}
+
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--accent);
+  color: var(--text-light);
+}
