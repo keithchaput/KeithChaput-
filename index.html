@@ -91,32 +91,19 @@
 
     .social-icons {
       margin-top: 1rem;
+      text-align: center;
     }
 
     .social-icons a {
       color: var(--text-light);
       font-size: 1.2rem;
       margin: 0 0.5rem;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
     }
 
     .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
-    .svg-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .svg-overlay svg {
-      width: 100%;
-      height: 100%;
+      transform: scale(1.3) rotate(-5deg);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
     }
 
     section,
@@ -208,7 +195,6 @@
 
     .support .social-icons a {
       font-size: 2rem;
-      transition: all 0.3s ease;
     }
 
     .support .fa-patreon {
@@ -217,11 +203,6 @@
 
     .support .fa-paypal {
       color: #00457c;
-    }
-
-    .support .social-icons a:hover {
-      transform: scale(1.3) rotate(-3deg);
-      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
     }
 
     .animate {
@@ -260,19 +241,6 @@
     </div>
   </header>
 
-  <div class="svg-overlay" aria-hidden="true">
-    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
-      <path fill="#ede4d1">
-        <animate attributeName="d" dur="8s" repeatCount="indefinite"
-          values="
-            M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z;
-            M0,100 C300,50 600,140 900,70 C1200,0 1500,120 1800,50 L1440,0 L0,0 Z;
-            M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z
-          "/>
-      </path>
-    </svg>
-  </div>
-
   <main role="main">
     <section id="about" class="animate">
       <h2>About Me</h2>
@@ -292,7 +260,7 @@
       <p style="text-align:center; max-width:700px; margin: 0 auto 2rem; color: #1b1b1b;">
         While all artwork and designs are provided freely for use in progressive activism and education, your support sustains this work and helps it grow.
       </p>
-      <div class="social-icons" style="text-align: center;">
+      <div class="social-icons">
         <a href="https://patreon.com/yourusername" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
         <a href="https://paypal.me/yourusername" target="_blank" aria-label="PayPal"><i class="fab fa-paypal"></i></a>
       </div>
@@ -331,3 +299,4 @@
   </script>
 </body>
 </html>
+
