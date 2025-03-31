@@ -7,16 +7,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://keithchaput.github.io/bannerbackground.png" />
   <meta property="og:url" content="https://keithchaput.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" as="style">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Keith Chaput">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Keith Chaput</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     :root {
       --main-bg: #ede4d1;
@@ -38,8 +38,8 @@
     }
 
     body {
-      font-size: 1.1rem;
-      letter-spacing: 0.01rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.01rem;
       background: var(--main-bg) url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
       font-family: 'Work Sans', sans-serif;
       color: var(--text-dark);
@@ -47,13 +47,15 @@
     }
 
     header {
-      background: url('bannerbackground.png') center/cover no-repeat;
-      color: var(--text-light);
-      text-align: center;
-      padding: 10rem 1rem;
-      position: relative;
-      overflow: hidden;
-    }
+  background: url('bannerbackground.png') center/cover no-repeat;
+  color: var(--text-light);
+  text-align: center;
+  padding: 10rem 1rem 6rem;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  border-bottom: none;
+}
 
     header::after {
       content: "";
@@ -64,12 +66,11 @@
       bottom: 0;
       background: rgba(20, 50, 92, 0.25);
       z-index: 0;
-      box-shadow: inset 0 -80px 60px -20px rgba(237, 228, 209, 0.9);
     }
 
     header h1,
-    .hero-pitch,
-    nav,
+    header .tagline,
+    header nav,
     .social-icons,
     .menu-toggle {
       position: relative;
@@ -83,11 +84,10 @@
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
     }
 
-    .hero-pitch {
-      font-size: 1.4rem;
-      font-weight: 600;
-      max-width: 600px;
-      margin: 0 auto 2rem;
+    .tagline {
+      font-weight: 300;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
@@ -117,8 +117,6 @@
       text-decoration: none;
       font-size: 1rem;
       display: inline-block;
-      letter-spacing: 0.05em;
-      padding: 0.25rem 0.5rem;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
@@ -147,9 +145,9 @@
     section {
       padding: 4rem 1.5rem;
       max-width: 900px;
-      margin: 6rem auto;
+      margin: 4rem auto;
       background: var(--card-bg);
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
       opacity: 0;
       transform: translateY(20px);
@@ -167,16 +165,6 @@
       font-size: 2rem;
       margin-bottom: 1rem;
       color: var(--accent);
-      position: relative;
-    }
-
-    h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: var(--highlight);
-      margin: 0.5rem auto 1.5rem;
     }
 
     .grid {
@@ -226,21 +214,21 @@
     }
 
     #contact button {
-      background: var(--highlight);
-      color: var(--text-light);
-      font-weight: bold;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    }
+  background: var(--highlight);
+  color: var(--text-light);
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
 
     #contact button:hover {
-      background: #a23220;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+  background: #a23220;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
     footer {
       text-align: center;
@@ -249,18 +237,8 @@
       color: var(--text-light);
     }
 
-    footer .social-icons a {
-      color: var(--text-light);
-      font-size: 1.2rem;
-      margin: 0 0.5rem;
-    }
-
-    .desktop-only {
-      display: block;
-    }
-
     @media (max-width: 768px) {
-      .menu-toggle {
+.menu-toggle {
         display: block;
       }
 
@@ -292,17 +270,22 @@
       .card {
         padding: 1.5rem;
       }
-
-      .desktop-only {
-        display: none;
-      }
     }
+      .desktop-only {
+  display: block;
+}
+
+    @media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
   <header>
     <h1>Keith Chaput</h1>
-    <p class="hero-pitch">Designing bold visuals for radical change.</p>
+    <p class="hero-pitch" style="font-size: 1.4rem; font-weight: 600; max-width: 600px; margin: 0 auto 2rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Designing bold visuals for radical change.</p>
     <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
     <nav>
       <a href="#about">About</a>
@@ -315,7 +298,9 @@
       <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
       <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
     </div>
-  </header>
+    
+  
+</header>
 
   <main>
     <section id="about">
@@ -346,12 +331,12 @@
 
   <footer>
     <p>&copy; 2025 Keith Chaput</p>
-    <div class="social-icons">
-      <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
-    </div>
-  </footer>
+  <div class="social-icons">
+  <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
+</div>
+</footer>
 
   <script>
     const staggerElements = (parent) => {
