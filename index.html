@@ -38,8 +38,8 @@
     }
 
     body {
-      font-size: 1.1rem;
-      letter-spacing: 0.01rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.01rem;
       background: var(--main-bg) url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
       font-family: 'Work Sans', sans-serif;
       color: var(--text-dark);
@@ -47,15 +47,15 @@
     }
 
     header {
-      background: url('bannerbackground.png') center/cover no-repeat;
-      color: var(--text-light);
-      text-align: center;
-      padding: 10rem 1rem 6rem;
-      position: relative;
-      overflow: hidden;
-      height: auto;
-      border-bottom: none;
-    }
+  background: url('bannerbackground.png') center/cover no-repeat;
+  color: var(--text-light);
+  text-align: center;
+  padding: 10rem 1rem 6rem;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  border-bottom: none;
+}
 
     header::after {
       content: "";
@@ -101,7 +101,6 @@
       top: 1rem;
       right: 1rem;
       z-index: 999;
-      cursor: pointer;
     }
 
     nav {
@@ -109,7 +108,6 @@
       justify-content: center;
       gap: 2rem;
       margin-bottom: 1rem;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
     }
 
     nav a {
@@ -144,8 +142,103 @@
       color: var(--highlight);
     }
 
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 900px;
+      margin: 4rem auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.1s;
+    }
+
+    h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 3px solid var(--accent);
+      padding: 2rem;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 6px 6px 0px var(--highlight);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    #contact form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: 'Work Sans', sans-serif;
+      background: #fff;
+      resize: vertical;
+    }
+
+    #contact textarea {
+      min-height: 150px;
+    }
+
+    #contact button {
+  background: var(--highlight);
+  color: var(--text-light);
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    #contact button:hover {
+  background: #a23220;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--accent);
+      color: var(--text-light);
+    }
+
     @media (max-width: 768px) {
-      .menu-toggle {
+.menu-toggle {
         display: block;
       }
 
@@ -159,41 +252,134 @@
         width: 100%;
         padding: 1rem 0;
         text-align: center;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
       }
 
       nav.show {
         display: flex;
-        max-height: 300px;
-        opacity: 1;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 2rem 1rem;
+        margin: 2rem 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
       }
     }
+      .desktop-only {
+  display: block;
+}
+
+    @media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
   <header>
     <h1>Keith Chaput</h1>
     <p class="hero-pitch" style="font-size: 1.4rem; font-weight: 600; max-width: 600px; margin: 0 auto 2rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Designing bold visuals for radical change.</p>
-    <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
     <nav>
       <a href="#about">About</a>
       <a href="#gallery">Work</a>
       <a href="#featured">Featured Work</a>
       <a href="#support">Support</a>
       <a href="#contact">Contact</a>
+      
     </nav>
-  </header>
+    <div class="social-icons desktop-only">
+      <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
+    </div>
+    
+  
+</header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m Keith, a designer and visual storyteller focused on bold political communication and grassroots aesthetics. My work is free to use for progressive activism and campaigns.</p>
+    </section>
+
+    
+
+    
+  <section id="featured" class="featured">
+    <h2>Featured Work</h2>
+    <div class="grid">
+      <div class="card">Featured Project 1</div>
+      <div class="card">Featured Project 2</div>
+    </div>
+  </section>
+
+  <section id="support" class="support">
+    <h2>Support This Work</h2>
+    <p style="text-align:center; max-width:700px; margin: 0 auto 2rem;">
+      While all artwork and designs are provided freely for use in progressive activism and education, your support sustains this work and helps it grow.
+    </p>
+    <div class="social-icons" style="text-align: center;">
+      <a href="https://patreon.com/yourusername" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+      <a href="https://paypal.me/yourusername" target="_blank" aria-label="PayPal"><i class="fab fa-paypal"></i></a>
+    </div>
+  </section>
+
+  <section id="contact">
+      <h2>Contact</h2>
+      <p>Reach out for requests or just to say hello.</p>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Keith Chaput</p>
+  <div class="social-icons">
+  <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
+</div>
+</footer>
 
   <script>
+    const staggerElements = (parent) => {
+      const children = parent.querySelectorAll('.card, p, h2');
+      children.forEach((el, i) => {
+        el.style.transitionDelay = `${i * 100}ms`;
+      });
+    };
+
     document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => {
+        staggerElements(section);
+        observer.observe(section);
+      });
+
       const toggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('nav');
-
       toggle.addEventListener('click', () => {
-        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', !isExpanded);
         nav.classList.toggle('show');
       });
     });
