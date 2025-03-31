@@ -81,10 +81,12 @@
       text-transform: uppercase;
       text-decoration: none;
       font-size: 1rem;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--highlight);
+      transform: scale(1.1);
     }
 
     .social-icons {
@@ -100,6 +102,27 @@
 
     .social-icons a:hover {
       transform: scale(1.2);
+    }
+
+    .svg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .svg-overlay svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    section,
+    .card {
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-blend-mode: multiply;
     }
 
     section {
@@ -133,11 +156,12 @@
       text-align: center;
       font-weight: 600;
       box-shadow: 6px 6px 0px var(--highlight);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     #contact form {
@@ -173,15 +197,18 @@
       padding: 0.75rem 1.5rem;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     #contact button:hover {
       background: #a23220;
+      box-shadow: 0 0 15px rgba(192, 64, 42, 0.7), 0 0 30px rgba(192, 64, 42, 0.4);
+      transform: translateY(-2px);
     }
 
     .support .social-icons a {
       font-size: 2rem;
+      transition: all 0.3s ease;
     }
 
     .support .fa-patreon {
@@ -190,6 +217,22 @@
 
     .support .fa-paypal {
       color: #00457c;
+    }
+
+    .support .social-icons a:hover {
+      transform: scale(1.3) rotate(-3deg);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    }
+
+    .animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     footer {
@@ -217,13 +260,26 @@
     </div>
   </header>
 
+  <div class="svg-overlay" aria-hidden="true">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path fill="#ede4d1">
+        <animate attributeName="d" dur="8s" repeatCount="indefinite"
+          values="
+            M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z;
+            M0,100 C300,50 600,140 900,70 C1200,0 1500,120 1800,50 L1440,0 L0,0 Z;
+            M0,120 C240,30 480,160 720,60 C960,-40 1200,140 1440,60 L1440,0 L0,0 Z
+          "/>
+      </path>
+    </svg>
+  </div>
+
   <main role="main">
-    <section id="about">
+    <section id="about" class="animate">
       <h2>About Me</h2>
       <p>I’m Keith, a designer and visual storyteller focused on bold political communication and grassroots aesthetics. My work blends retro propaganda with modern tools to empower movements and shift narratives.</p>
     </section>
 
-    <section id="featured">
+    <section id="featured" class="animate">
       <h2>Featured Work</h2>
       <div class="grid">
         <div class="card">Featured Project 1</div>
@@ -231,7 +287,7 @@
       </div>
     </section>
 
-    <section id="support" class="support">
+    <section id="support" class="support animate">
       <h2>Support This Work</h2>
       <p style="text-align:center; max-width:700px; margin: 0 auto 2rem; color: #1b1b1b;">
         While all artwork and designs are provided freely for use in progressive activism and education, your support sustains this work and helps it grow.
@@ -242,7 +298,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="animate">
       <h2>Contact</h2>
       <p>Reach out for collaborations, commissions, or just to say hello.</p>
       <form>
@@ -257,5 +313,21 @@
   <footer role="contentinfo">
     <p>&copy; 2025 Keith Chaput</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".animate");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
