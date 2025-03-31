@@ -1,20 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="The official portfolio and blog of Keith Chaput – digital artist, designer, and political storyteller. View work, read thoughts, and get in touch." />
-  <meta property="og:title" content="Keith Chaput Portfolio & Blog" />
-  <meta property="og:description" content="Design, politics, and visual storytelling by Keith Chaput." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://keithchaput.github.io/bannerbackground.png" />
-  <meta property="og:url" content="https://keithchaput.github.io/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" as="style">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Keith Chaput">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <title>Keith Chaput</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keith Chaput – Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -27,80 +17,33 @@
       --card-bg: #fff7ed;
     }
 
-    * {
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-dark);
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-  font-size: 1.1rem;
-  letter-spacing: 0.01rem;
-      background: var(--main-bg) url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
-      font-family: 'Work Sans', sans-serif;
-      color: var(--text-dark);
-      line-height: 1.7;
     }
 
     header {
-  background: url('bannerbackground.png') center/cover no-repeat;
-  color: var(--text-light);
-  text-align: center;
-  padding: 10rem 1rem 6rem;
-  position: relative;
-  overflow: hidden;
-  height: auto;
-  border-bottom: none;
-}
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(20, 50, 92, 0.25);
-      z-index: 0;
+      background: url('bannerbackground.png') center/cover no-repeat;
+      padding: 8rem 1rem;
+      text-align: center;
+      color: var(--text-light);
     }
 
-    header h1,
-    header .tagline,
-    header nav,
-    .social-icons,
-    .menu-toggle {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
+    h1 {
       font-family: 'Archivo Black', sans-serif;
       font-size: 3rem;
       margin-bottom: 0.5rem;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
     }
 
-    .tagline {
-      font-weight: 300;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
+    .hero-pitch {
+      font-size: 1.4rem;
+      font-weight: 600;
+      max-width: 600px;
+      margin: 0 auto 2rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-light);
-      font-size: 2rem;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      z-index: 999;
     }
 
     nav {
@@ -112,34 +55,10 @@
 
     nav a {
       color: var(--text-light);
-      font-weight: 600;
       text-transform: uppercase;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 1rem;
-      display: inline-block;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    nav a:hover {
-      transform: scale(1.1);
-      color: var(--highlight);
-    }
-
-    .social-icons {
-      margin-top: 1rem;
-    }
-
-    .social-icons a {
-      display: inline-block;
-      color: var(--text-light);
-      font-size: 1.2rem;
-      margin: 0 0.5rem;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.4) rotate(-5deg);
-      color: var(--highlight);
+      letter-spacing: 0.05em;
     }
 
     section {
@@ -147,24 +66,8 @@
       max-width: 900px;
       margin: 4rem auto;
       background: var(--card-bg);
-      border-radius: 12px;
+      border-radius: 8px;
       box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.1s;
-    }
-
-    h2 {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
     }
 
     .grid {
@@ -180,55 +83,8 @@
       text-align: center;
       font-weight: 600;
       box-shadow: 6px 6px 0px var(--highlight);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
-
-    .card:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    #contact form {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    #contact input,
-    #contact textarea {
-      padding: 0.75rem 1rem;
-      border: 2px solid var(--accent);
-      border-radius: 6px;
-      font-size: 1rem;
-      font-family: 'Work Sans', sans-serif;
-      background: #fff;
-      resize: vertical;
-    }
-
-    #contact textarea {
-      min-height: 150px;
-    }
-
-    #contact button {
-  background: var(--highlight);
-  color: var(--text-light);
-  font-weight: bold;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-    #contact button:hover {
-  background: #a23220;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
 
     footer {
       text-align: center;
@@ -237,70 +93,69 @@
       color: var(--text-light);
     }
 
-    @media (max-width: 768px) {
-.menu-toggle {
-        display: block;
-      }
-
-      nav {
-        display: none;
-        flex-direction: column;
-        background: var(--accent);
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        padding: 1rem 0;
-        text-align: center;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 2rem 1rem;
-        margin: 2rem 1rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-      }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 4rem 1rem;
     }
-      .desktop-only {
-  display: block;
-}
 
-    @media (max-width: 768px) {
-  .desktop-only {
-    display: none;
-  }
-}
+    .modal-content {
+      background: var(--card-bg);
+      margin: auto;
+      max-width: 800px;
+      border: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 6px 6px 0 var(--highlight);
+      color: var(--text-dark);
+      animation: fadeIn 0.5s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      margin: 1.5rem 0;
+      border: 2px solid var(--accent);
+    }
+
+    .modal-content .subtitle {
+      color: var(--highlight);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .close {
+      color: var(--highlight);
+      float: right;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Keith Chaput</h1>
-    <p class="hero-pitch" style="font-size: 1.4rem; font-weight: 600; max-width: 600px; margin: 0 auto 2rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Designing bold visuals for radical change.</p>
-    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+    <p class="hero-pitch">Designing bold visuals for radical change.</p>
     <nav>
       <a href="#about">About</a>
       <a href="#gallery">Work</a>
       <a href="#contact">Contact</a>
       <a href="blog.html">Blog</a>
     </nav>
-    <div class="social-icons desktop-only">
-      <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
-    </div>
-    
-  
-</header>
+  </header>
 
   <main>
     <section id="about">
@@ -311,9 +166,9 @@
     <section id="gallery">
       <h2>Selected Work</h2>
       <div class="grid">
-        <div class="card">Project 1</div>
-        <div class="card">Project 2</div>
-        <div class="card">Project 3</div>
+        <div class="card" onclick="openModal('modal-citizens')">
+          Overturn Citizens United
+        </div>
       </div>
     </section>
 
@@ -321,9 +176,9 @@
       <h2>Contact</h2>
       <p>Reach out for requests or just to say hello.</p>
       <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </section>
@@ -331,43 +186,30 @@
 
   <footer>
     <p>&copy; 2025 Keith Chaput</p>
-  <div class="social-icons">
-  <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
-  <a href="https://patreon.com/yourusername" target="_blank"><i class="fab fa-patreon"></i></a>
-</div>
-</footer>
+  </footer>
+
+  <div id="modal-citizens" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-citizens')">&times;</span>
+      <h2>Overturn Citizens United</h2>
+      <p class="subtitle">A bold visual call to end corporate influence in democracy.</p>
+      <img src="citizensunited.png" alt="Overturn Citizens United poster">
+      <p><strong>Overview:</strong> This poster was created to target the political power imbalance caused by the Citizens United decision. It evokes vintage American propaganda with a modern activist tone.</p>
+      <p><strong>Process:</strong> I used bold figures, flat shapes, and a limited palette inspired by WPA and union posters. The symbolism is sharp and immediate, intended for both digital and printed outreach.</p>
+      <p><strong>Outcome:</strong> Shared widely online and adapted for campaign flyers, it served as a central asset in messaging around campaign finance reform.</p>
+    </div>
+  </div>
 
   <script>
-    const staggerElements = (parent) => {
-      const children = parent.querySelectorAll('.card, p, h2');
-      children.forEach((el, i) => {
-        el.style.transitionDelay = `${i * 100}ms`;
-      });
-    };
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll("section");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      sections.forEach(section => {
-        staggerElements(section);
-        observer.observe(section);
-      });
-
-      const toggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('nav');
-      toggle.addEventListener('click', () => {
-        nav.classList.toggle('show');
-      });
-    });
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+      document.body.style.overflow = '';
+    }
   </script>
 </body>
 </html>
