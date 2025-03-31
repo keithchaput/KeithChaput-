@@ -32,6 +32,7 @@
     header {
       background: url('bannerbackground.png') center/contain no-repeat;
       background-size: 100% auto;
+      background-attachment: fixed;
       color: var(--text-light);
       text-align: center;
       padding: 10rem 1rem;
@@ -128,6 +129,8 @@
       color: var(--accent);
       border-bottom: 2px solid var(--highlight);
       padding-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
     }
 
     .grid {
@@ -191,6 +194,7 @@
       background: #a23220;
       box-shadow: 0 0 15px rgba(192, 64, 42, 0.7), 0 0 30px rgba(192, 64, 42, 0.4);
       transform: translateY(-2px);
+      transform: scale(1.05);
     }
 
     .support .social-icons a {
@@ -296,7 +300,19 @@
 
       elements.forEach(el => observer.observe(el));
     });
+
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const button = this.querySelector("button");
+      button.disabled = true;
+      const originalText = button.textContent;
+      button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      setTimeout(() => {
+        button.disabled = false;
+        button.textContent = originalText;
+        alert("Message sent! (This is a demo.)");
+      }, 2000);
+    });
   </script>
 </body>
 </html>
-
