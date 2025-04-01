@@ -134,6 +134,24 @@
       }
     }
 
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--main-bg);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .page-transition.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     section,
     .card {
       background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
@@ -312,6 +330,8 @@
     <p>&copy; 2025 Keith Chaput</p>
   </footer>
 
+  <div class="page-transition" id="pageTransition"></div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const elements = document.querySelectorAll(".animate");
@@ -325,6 +345,23 @@
       }, { threshold: 0.1 });
 
       elements.forEach(el => observer.observe(el));
+    });
+
+    // Fade effect for nav click transitions
+    const links = document.querySelectorAll("a[href^='#']");
+    const transitionEl = document.getElementById("pageTransition");
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        e.preventDefault();
+        transitionEl.classList.add("active");
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+          transitionEl.classList.remove("active");
+        }, 300);
+      });
     });
 
     document.querySelector("form").addEventListener("submit", function (e) {
