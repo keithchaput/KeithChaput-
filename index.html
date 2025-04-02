@@ -32,7 +32,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      padding: 2rem 3rem;
       border-bottom: 1px solid var(--tactical-green);
     }
 
@@ -42,9 +42,19 @@
     }
 
     .logo img {
-      height: 50px;
+      height: 80px;
       width: auto;
       filter: drop-shadow(0 0 3px var(--sand));
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 3px var(--sand));
+      }
+      50% {
+        filter: drop-shadow(0 0 8px var(--sand));
+      }
     }
 
     nav ul {
