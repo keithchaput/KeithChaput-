@@ -52,12 +52,23 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .glitch-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hero-text {
       position: relative;
       text-align: center;
-      z-index: 1;
+      z-index: 2;
     }
 
     .hero-text h1 {
@@ -65,6 +76,18 @@
       letter-spacing: 0.15em;
       color: var(--sand);
       text-transform: uppercase;
+      position: relative;
+    }
+
+    .hero-text h1::after {
+      content: '';
+      position: absolute;
+      top: 45%;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: black;
+      animation: glitch-bar 2s infinite steps(2, end);
     }
 
     .hero-text p {
@@ -85,6 +108,26 @@
 
     .cta-button:hover {
       transform: scale(1.05);
+    }
+
+    @keyframes glitch-bar {
+      0%, 20%, 100% { transform: translateX(0); }
+      10% { transform: translateX(-5px); }
+      15% { transform: translateX(3px); }
+    }
+
+    .glow {
+      filter: drop-shadow(0 0 10px var(--sand));
+    }
+
+    .glitch-svg rect {
+      animation: glitch-rect 3s infinite ease-in-out alternate;
+    }
+
+    @keyframes glitch-rect {
+      0% { transform: translateY(0); opacity: 0.1; }
+      50% { transform: translateY(-5px); opacity: 0.3; }
+      100% { transform: translateY(3px); opacity: 0.15; }
     }
 
     .logo-section {
@@ -168,9 +211,15 @@
 </head>
 <body>
   <header>
-    <div class="hero-text">
+    <svg class="glitch-overlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <rect width="100" height="2" y="10" fill="white" class="glitch-svg"/>
+      <rect width="100" height="1" y="25" fill="var(--sand)" class="glitch-svg"/>
+      <rect width="100" height="2" y="40" fill="white" class="glitch-svg"/>
+    </svg>
+
+    <div class="hero-text glow">
       <h1>Redacted Supply</h1>
-      <p>..............</p>
+      <p>Military gear. Streetwear energy. Culture jamming.</p>
       <button class="cta-button">Shop Now</button>
     </div>
   </header>
