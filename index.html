@@ -30,8 +30,10 @@
     header {
       position: relative;
       width: 100%;
-      height: 75vh;
-      background: none;
+      height: 60vh;
+      background-image: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/background.png');
+      background-size: cover;
+      background-position: center;
       overflow: hidden;
       animation: flicker 5s infinite;
     }
@@ -52,7 +54,7 @@
       background-image: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif');
       opacity: 0.05;
       mix-blend-mode: overlay;
-      z-index: 2;
+      z-index: 10;
       pointer-events: none;
       animation: noisePulse 8s infinite ease-in-out;
     }
@@ -68,7 +70,7 @@
       height: 2px;
       background: rgba(255, 255, 255, 0.05);
       animation: scanline 6s linear infinite;
-      z-index: 3;
+      z-index: 11;
       pointer-events: none;
     }
 
@@ -79,24 +81,28 @@
 
     .silhouette {
       position: absolute;
-      top: 10%;
-      left: 3%;
-      width: 35%;
+      top: 5%;
+      left: 5%;
+      width: 30%;
       height: auto;
-      background: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/silhouette.png') no-repeat left center;
-      background-size: contain;
-      z-index: 4;
-      filter: drop-shadow(0 0 8px var(--sand));
+      z-index: 12;
       pointer-events: none;
+      filter: drop-shadow(0 0 8px var(--sand));
+    }
+
+    .silhouette img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .redacted-bar {
       position: absolute;
-      top: 20%;
-      right: 4%;
-      width: 30%;
+      top: 22%;
+      right: 5%;
+      width: 35%;
       height: auto;
-      z-index: 5;
+      z-index: 13;
       pointer-events: none;
       animation: glitchBar 2.5s infinite steps(2, end);
     }
@@ -114,12 +120,12 @@
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/background.png" alt="Banner Background" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;" />
     <div class="noise-layer"></div>
     <div class="glitch-scanline"></div>
-    <div class="silhouette" style="z-index: 10;"></div>
-    <img class="redacted-bar" style="z-index: 11;" src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/redacted-bar.png" alt="Redacted Bar" />
+    <div class="silhouette">
+      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/silhouette.png" alt="Silhouette" />
+    </div>
+    <img class="redacted-bar" src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/redacted-bar.png" alt="Redacted Bar" />
   </header>
 </body>
 </html>
-
