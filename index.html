@@ -37,25 +37,36 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
     }
 
-    .hero-text {
-      position: relative;
-      text-align: center;
+    .noise-layer {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif');
+      opacity: 0.05;
+      mix-blend-mode: overlay;
       z-index: 2;
+      pointer-events: none;
     }
 
-    .hero-text h1 {
-      font-size: 4rem;
-      letter-spacing: 0.15em;
-      color: var(--sand);
-      text-transform: uppercase;
+    .glitch-scanline {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.05);
+      animation: scanline 6s linear infinite;
+      z-index: 3;
+      pointer-events: none;
     }
 
-    /* Removed redaction bar animation and glow */
-
-    .glitch-overlay {
-      display: none;
+    @keyframes scanline {
+      0% { top: -5%; }
+      100% { top: 105%; }
     }
 
     .section, .logo-section, .about, .contact, footer {
@@ -65,10 +76,8 @@
 </head>
 <body>
   <header>
-    <div class="hero-text">
-      <h1>Redacted Supply</h1>
-    </div>
+    <div class="noise-layer"></div>
+    <div class="glitch-scanline"></div>
   </header>
 </body>
 </html>
-
