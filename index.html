@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --main-bg: #101510;
-      --accent: #2a402f;
+      --main-bg: #0f0f0f;
+      --accent: #3b4a3d;
       --highlight: #E1D798;
-      --text-dark: #E1D798;
+      --text-dark: #eaeaea;
       --text-light: #ffffff;
       --card-bg: #1a1a1a;
     }
@@ -29,44 +29,50 @@
       line-height: 1.7;
     }
 
-    header {
-      background: url() center/contain no-repeat;
-      background-size: 100% auto;
-      background-attachment: fixed;
-      color: var(--text-light);
+    .glitch-banner {
+      background: url('glitch-banner.png') center/cover no-repeat;
+      height: 100vh;
+      position: relative;
+      animation: glitchShift 6s infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 10rem 1rem;
-      position: relative;
+      color: var(--highlight);
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(20, 50, 92, 0.25);
-      z-index: 0;
+    @keyframes glitchShift {
+      0%, 100% {
+        background-position: center;
+        filter: none;
+      }
+      3% {
+        background-position: center;
+        filter: contrast(1.2) brightness(1.1) hue-rotate(5deg);
+      }
+      3.5% {
+        background-position: center left 2px;
+        filter: grayscale(0.5) brightness(1.2);
+      }
+      4% {
+        background-position: center;
+        filter: none;
+      }
     }
 
-    header h1,
-    header .tagline,
-    header nav,
-    .social-icons {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
+    .glitch-banner h1 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 0.5rem;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+      letter-spacing: 2px;
     }
 
     .tagline {
-      font-weight: 300;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
     }
 
     nav {
@@ -77,7 +83,7 @@
     }
 
     nav a {
-      color: var(--text-light);
+      color: var(--highlight);
       font-weight: 600;
       text-transform: uppercase;
       text-decoration: none;
@@ -86,76 +92,26 @@
     }
 
     nav a:hover {
-      color: var(--highlight);
+      color: var(--text-light);
       transform: scale(1.1);
     }
 
     .social-icons {
       margin-top: 1rem;
-      text-align: center;
     }
 
     .social-icons a {
       position: relative;
       display: inline-block;
-      color: var(--text-light);
-      font-size: 1.2rem;
+      color: var(--highlight);
+      font-size: 1.3rem;
       margin: 0 0.5rem;
       transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
     }
 
     .social-icons a:hover {
       transform: translateY(-3px) scale(1.3) rotate(-5deg);
-      color: var(--highlight);
-    }
-
-    .social-icons a:hover::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 110%;
-      height: 110%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
-      animation: pulseOrbit 0.6s ease-out;
-      pointer-events: none;
-    }
-
-    @keyframes pulseOrbit {
-      from {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0.7;
-      }
-      to {
-        transform: translate(-50%, -50%) scale(1.6);
-        opacity: 0;
-      }
-    }
-
-    .page-transition {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--main-bg);
-      opacity: 0;
-      pointer-events: none;
-      z-index: 9999;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .page-transition.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    section,
-    .card {
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-blend-mode: multiply;
+      color: var(--text-light);
     }
 
     section {
@@ -163,19 +119,22 @@
       max-width: 900px;
       margin: 4rem auto;
       background: var(--card-bg);
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-blend-mode: multiply;
       border-radius: 12px;
-      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     h2 {
       font-family: 'Archivo Black', sans-serif;
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: var(--accent);
-      border-bottom: 2px solid var(--highlight);
+      color: var(--highlight);
+      border-bottom: 2px solid var(--accent);
       padding-bottom: 0.5rem;
       text-transform: uppercase;
       letter-spacing: 1.2px;
+      text-align: center;
     }
 
     .grid {
@@ -186,7 +145,7 @@
 
     .card {
       background: var(--card-bg);
-      border: 3px solid var(--accent);
+      border: 2px solid var(--accent);
       padding: 2rem;
       text-align: center;
       font-weight: 600;
@@ -196,7 +155,7 @@
 
     .card:hover {
       transform: translateY(-5px) scale(1.02);
-      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     #contact form {
@@ -212,11 +171,12 @@
     #contact input,
     #contact textarea {
       padding: 0.75rem 1rem;
-      border: 2px solid var(--accent);
+      border: 2px solid var(--highlight);
       border-radius: 6px;
       font-size: 1rem;
       font-family: 'Work Sans', sans-serif;
       background: #fff;
+      color: #000;
       resize: vertical;
     }
 
@@ -226,7 +186,7 @@
 
     #contact button {
       background: var(--highlight);
-      color: var(--text-light);
+      color: #000;
       font-weight: bold;
       border: none;
       padding: 0.75rem 1.5rem;
@@ -236,9 +196,9 @@
     }
 
     #contact button:hover {
-      background: #a23220;
-      box-shadow: 0 0 15px rgba(192, 64, 42, 0.7), 0 0 30px rgba(192, 64, 42, 0.4);
-      transform: translateY(-2px) scale(1.05);
+      background: #d6c17c;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px var(--highlight);
     }
 
     .support .social-icons a {
@@ -272,13 +232,14 @@
     }
   </style>
 </head>
-<body role="document">
-  <header role="banner">
-    <h1>Redacted Supply</h1>
-    <p class="tagline">Engineered for the Unseen</p>
-    <nav role="navigation" aria-label="Main Navigation">
+<body>
+  <header class="glitch-banner">
+    <h1>REDACTED SUPPLY</h1>
+    <p class="tagline">Tactical visuals for rebels, veterans & visionaries.</p>
+    <nav>
       <a href="#about">About</a>
-      <a href="#featured">Supply Drops</a>
+      <a href="#featured">Featured</a>
+      <a href="#support">Support</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="social-icons">
@@ -288,24 +249,34 @@
     </div>
   </header>
 
-  <main role="main">
+  <main>
     <section id="about" class="animate">
-      <h2>About Us</h2>
-      <p>...............................................</p>
+      <h2>About</h2>
+      <p>Redacted Supply is a design and apparel brand where military grit meets anti-imperialism and political resistance. All visuals are crafted to disrupt, inform, and empower the movement.</p>
     </section>
 
     <section id="featured" class="animate">
-      <h2>Supply Drops</h2>
+      <h2>Featured Work</h2>
       <div class="grid">
         <div class="card">Featured Project 1</div>
         <div class="card">Featured Project 2</div>
       </div>
     </section>
 
+    <section id="support" class="support animate">
+      <h2>Support This Work</h2>
+      <p style="text-align:center; max-width:700px; margin: 0 auto 2rem;">
+        All artwork is free to use. But your support helps keep this gear running and the art uncompromised.
+      </p>
+      <div class="social-icons">
+        <a href="https://patreon.com/yourusername" target="_blank" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        <a href="https://paypal.me/yourusername" target="_blank" aria-label="PayPal"><i class="fab fa-paypal"></i></a>
+      </div>
+    </section>
 
     <section id="contact" class="animate">
       <h2>Contact</h2>
-      <p>For command specific custom patches or shirts please reach out. </p>
+      <p>Have an idea, request, or collaboration in mind? Hit me up.</p>
       <form>
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
@@ -315,11 +286,9 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <p>&copy; 2025 Redacted Supply</p>
   </footer>
-
-  <div class="page-transition" id="pageTransition"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -334,23 +303,6 @@
       }, { threshold: 0.1 });
 
       elements.forEach(el => observer.observe(el));
-    });
-
-    // Fade effect for nav click transitions
-    const links = document.querySelectorAll("a[href^='#']");
-    const transitionEl = document.getElementById("pageTransition");
-
-    links.forEach(link => {
-      link.addEventListener("click", e => {
-        const target = document.querySelector(link.getAttribute("href"));
-        if (!target) return;
-        e.preventDefault();
-        transitionEl.classList.add("active");
-        setTimeout(() => {
-          target.scrollIntoView({ behavior: "smooth" });
-          transitionEl.classList.remove("active");
-        }, 300);
-      });
     });
 
     document.querySelector("form").addEventListener("submit", function (e) {
