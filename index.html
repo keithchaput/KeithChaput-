@@ -32,6 +32,9 @@
       background-color: var(--black);
       padding: 2rem 3rem;
       border-bottom: 1px solid var(--tactical-green);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .logo {
@@ -51,14 +54,19 @@
         filter: drop-shadow(0 0 3px var(--sand));
       }
       50% {
-        filter: drop-shadow(0 0 8px var(--sand));
+        filter: drop-shadow(0 0 8px var (--sand));
       }
+    }
+
+    nav {
+      margin-bottom: 1rem;
     }
 
     nav ul {
       display: flex;
       list-style: none;
       gap: 1.5rem;
+      justify-content: center;
     }
 
     nav a {
@@ -90,9 +98,6 @@
     .social-links a:hover {
       opacity: 1;
     }
-
-    /* Removed the .hero, .hero h1, .tagline, .hero-text, .hero-text h1, .hero-text .tagline, .redacted-word,
-       .redacted-word::after, .glitch-divider, and keyframes glitch-flicker sections */
 
     .social-icons {
       display: flex;
