@@ -82,10 +82,10 @@
     .silhouette {
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
+      left: 5%;
+      width: 40%;
       height: 100%;
-      background: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/silhouette.png') no-repeat center center;
+      background: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/silhouette.png') no-repeat left center;
       background-size: contain;
       z-index: 4;
       filter: drop-shadow(0 0 8px var(--sand));
@@ -94,10 +94,9 @@
 
     .redacted-bar {
       position: absolute;
-      top: 42%; /* Adjust depending on placement */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70%;
+      top: 42%;
+      right: 5%;
+      width: 35%;
       height: auto;
       z-index: 5;
       pointer-events: none;
@@ -105,9 +104,9 @@
     }
 
     @keyframes glitchBar {
-      0%, 100% { transform: translate(-50%, 0); opacity: 1; }
-      33% { transform: translate(-50%, -1px); opacity: 0.9; }
-      66% { transform: translate(-50%, 2px); opacity: 1; }
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      33% { transform: translateY(-1px); opacity: 0.9; }
+      66% { transform: translateY(2px); opacity: 1; }
     }
 
     .section, .logo-section, .about, .contact, footer {
