@@ -28,17 +28,14 @@
     }
 
     header {
-      background-color: var(--black);
+      position: relative;
+      width: 100%;
       height: 100vh;
       background-image: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/banner-glitch.png');
       background-size: cover;
       background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
       overflow: hidden;
-      animation: flicker 1s infinite;
+      animation: flicker 5s infinite;
     }
 
     @keyframes flicker {
@@ -49,7 +46,6 @@
     }
 
     .noise-layer {
-      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -83,6 +79,37 @@
       100% { top: 105%; }
     }
 
+    .silhouette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/silhouette.png') no-repeat center center;
+      background-size: contain;
+      z-index: 4;
+      filter: drop-shadow(0 0 8px var(--sand));
+      pointer-events: none;
+    }
+
+    .redacted-bar {
+      position: absolute;
+      top: 42%; /* Adjust depending on placement */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: auto;
+      z-index: 5;
+      pointer-events: none;
+      animation: glitchBar 2.5s infinite steps(2, end);
+    }
+
+    @keyframes glitchBar {
+      0%, 100% { transform: translate(-50%, 0); opacity: 1; }
+      33% { transform: translate(-50%, -1px); opacity: 0.9; }
+      66% { transform: translate(-50%, 2px); opacity: 1; }
+    }
+
     .section, .logo-section, .about, .contact, footer {
       display: none;
     }
@@ -92,6 +119,8 @@
   <header>
     <div class="noise-layer"></div>
     <div class="glitch-scanline"></div>
+    <div class="silhouette"></div>
+    <img class="redacted-bar" src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/redacted-bar.png" alt="Redacted Bar" />
   </header>
 </body>
 </html>
