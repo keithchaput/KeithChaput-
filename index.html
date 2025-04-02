@@ -31,9 +31,7 @@
       position: relative;
       width: 100%;
       height: 75vh;
-      background-image: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/background.png');
-      background-size: cover;
-      background-position: center;
+      background: none;
       overflow: hidden;
       animation: flicker 5s infinite;
     }
@@ -116,10 +114,12 @@
 </head>
 <body>
   <header>
+    <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/background.png" alt="Banner Background" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;" />
     <div class="noise-layer"></div>
     <div class="glitch-scanline"></div>
-    <div class="silhouette"></div>
-    <img class="redacted-bar" src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/redacted-bar.png" alt="Redacted Bar" />
+    <div class="silhouette" style="z-index: 10;"></div>
+    <img class="redacted-bar" style="z-index: 11;" src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/redacted-bar.png" alt="Redacted Bar" />
   </header>
 </body>
 </html>
+
