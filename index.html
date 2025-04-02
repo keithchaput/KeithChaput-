@@ -28,41 +28,56 @@
     }
 
     header {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      background-image: url('https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/banner-glitch.png');
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
+      background-color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--tactical-green);
     }
 
-    .svg-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 5;
+    .logo {
+      display: flex;
+      align-items: center;
     }
 
-    .svg-overlay rect {
-      animation: glitchBar 2.5s infinite steps(2, end);
-      fill: black;
-      opacity: 0.8;
+    .logo img {
+      height: 50px;
+      width: auto;
+      filter: drop-shadow(0 0 3px var(--sand));
     }
 
-    @keyframes glitchBar {
-      0%, 100% { transform: translateY(0); }
-      33% { transform: translateY(-1px); }
-      66% { transform: translateY(2px); }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--sand);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
   <header>
-    
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/redactedlogo.PNG" alt="Redacted Supply Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 </body>
 </html>
