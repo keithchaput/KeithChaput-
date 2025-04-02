@@ -38,6 +38,14 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
+      animation: flicker 1s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { filter: brightness(1); }
+      2%, 4%, 6%, 8% { filter: brightness(0.95); }
+      10%, 15% { filter: brightness(1.1); }
+      12%, 18% { filter: brightness(0.9); }
     }
 
     .noise-layer {
@@ -52,6 +60,12 @@
       mix-blend-mode: overlay;
       z-index: 2;
       pointer-events: none;
+      animation: noisePulse 8s infinite ease-in-out;
+    }
+
+    @keyframes noisePulse {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.07; }
     }
 
     .glitch-scanline {
