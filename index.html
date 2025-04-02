@@ -74,6 +74,25 @@
     nav a:hover {
       opacity: 0.6;
     }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: 1rem;
+    }
+
+    .social-links a {
+      color: var(--sand);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+      opacity: 0.75;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
       .hero {
       text-align: center;
       padding: 4rem 2rem;
@@ -129,8 +148,8 @@
       top: 50%;
       left: 0;
       width: 100%;
-      height: 0.4em;
-      background-color: black;
+      height: 0.4em; opacity: 0.65;
+      background-color: rgba(0, 0, 0, 0.7);
       transform: translateY(-50%);
     }
 </style>
@@ -142,19 +161,27 @@
     </div>
     <div class="hero-text">
       <h1><span class="redacted-word">REDACTED</span> SUPPLY</h1>
-      <p class="tagline">Proudly not approved by command</p>
+      <p class="tagline">unauthorized. </p>
     </div>
       <nav>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Shop</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#">Supply Drop</a></li>
         <li><a href="#">Contact</a></li>
+
       </ul>
     </nav>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Twitter">Twitter</a>
+      <a href="#" aria-label="TikTok">TikTok</a>
+    </div>
   </header>
 
   
+  <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--tactical-green);">
+    <a href="#" style="color: var(--sand); text-decoration: none; font-size: 0.9rem;">About</a>
+  </footer>
 </body>
 </html>
-
