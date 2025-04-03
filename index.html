@@ -10,8 +10,10 @@
   <style>
     :root {
       --sand: #E1D798;
-      --tactical-green: #20241D;
-      --black: #0D0D0D;
+      --tactical-green: #2D3328;
+      --black: #1A1A1A;
+      --dark-sand: #C9BB88;
+      --bg-light: #2E2B1F;
     }
 
     * {
@@ -21,7 +23,7 @@
     }
 
     body {
-      background-color: var(--black);
+      background-color: var(--bg-light);
       font-family: 'Anton', sans-serif;
       color: var(--sand);
       overflow-x: hidden;
@@ -32,6 +34,10 @@
       background-color: var(--black);
       padding: 2rem 3rem;
       border-bottom: 1px solid var(--tactical-green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -101,7 +107,7 @@
     .glitch-divider {
       width: 100%;
       height: 4px;
-      background: repeating-linear-gradient(to right, black 0 10px, var(--sand) 10px 20px);
+      background: repeating-linear-gradient(to right, var(--black) 0 10px, var(--sand) 10px 20px);
       animation: glitch-flicker 1s infinite steps(2, end);
     }
 
@@ -117,6 +123,7 @@
       flex-direction: row;
       gap: 1.5rem;
       padding: 1rem 0;
+      width: 100%;
     }
 
     .social-icons .icon {
