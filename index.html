@@ -14,7 +14,7 @@
       --card-bg: #FFFFFF;
       --border: #D4D0C7;
       --black: #1C1C1C;
-      --accent: #6A7B52;
+      --accent: #a67843;
     }
 
     * {
@@ -40,12 +40,9 @@
       flex-wrap: wrap;
     }
 
-    .logo img {
-      height: 80px;
-      width: auto;
-      border-radius: 50%;
-      filter: drop-shadow(0 0 3px var(--accent));
-    }
+    $1
+      animation: floatGlow 4s ease-in-out infinite;
+      transition: transform 0.3s ease;}
 
     nav ul {
       display: flex;
@@ -146,14 +143,24 @@
     }
 
     .product-card button:hover {
-      background-color: #586B42;
+      background-color: #8a5e33;
+    }
+      @keyframes floatGlow {
+      0%, 100% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 3px var(--accent));
+      }
+      50% {
+        transform: translateY(-5px);
+        filter: drop-shadow(0 0 12px var(--accent));
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/[OPR8TR]logo.png" alt="[OPR8TR] Logo">
+      <img src="/mnt/data/oplogo.png" alt="[OPR8TR] Logo">
     </div>
     <nav>
       <ul>
