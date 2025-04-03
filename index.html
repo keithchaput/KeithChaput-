@@ -1,252 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[OPR8TR]</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --sand: #E1D798;
-      --background: #F7F5F2;
-      --card-bg: #FFFFFF;
-      --border: #D4D0C7;
-      --black: #1C1C1C;
-      --accent: #a67843;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-  position: relative;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
-  background-color: var(--background);
-  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-  background-repeat: repeat;
-  font-family: 'Anton', sans-serif;
-  color: var(--black);
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>[OPR8TR]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<style>
+:root {
+--sand: #E1D798;
+--background: #F7F5F2;
+--card-bg: #FFFFFF;
+--border: #D4D0C7;
+--black: #1C1C1C;
+--accent: #a67843;
 }
 
-    header {
-      background-color: var(--card-bg);
-      padding: 1rem 2rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-    .logo img {
-      height: 80px;
-      width: auto;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
+body {
+position: relative;
+perspective: 1px;
+transform-style: preserve-3d;
+overflow-x: hidden;
+background-color: var(--background);
+background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+background-repeat: repeat;
+font-family: 'Anton', sans-serif;
+color: var(--black);
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      list-style: none;
-      gap: 1.5rem;
-      width: 100%;
-      margin-top: 1rem;
-    }
+header {
+background-color: var(--card-bg);
+padding: 1rem 2rem;
+border-bottom: 1px solid var(--border);
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-    nav a {
-$1
-      letter-spacing: 0.05em;
+.logo img {
+height: 80px;
+width: auto;
+border-radius: 50%;
+filter: drop-shadow(0 0 3px var(--accent));
+animation: floatGlow 4s ease-in-out infinite;
+transition: transform 0.3s ease;
+}
 
-    nav a:hover {
-      color: var(--accent);
-      
-    }
+nav ul {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+list-style: none;
+gap: 1.5rem;
+width: 100%;
+margin-top: 1rem;
+}
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.5rem 0;
-    }
+nav a {
+color: var(--black);
+text-decoration: none;
+font-size: 1rem;
+font-weight: bold;
+position: relative;
+transition: color 0.3s ease;
+}
 
-    .social-icons .icon {
-      width: 24px;
-      height: 24px;
-      background-size: cover;
-      opacity: 0.7;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
+nav a:hover {
+color: var(--accent);
+text-shadow: 0 0 5px var(--accent);
+}
 
-    .social-icons .icon:hover {
-      box-shadow: 0 0 8px var(--accent);
-      transform: scale(1.2);
-      opacity: 1;
-    }
+.social-icons {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+padding: 0.5rem 0;
+}
 
-    .icon.instagram {
-      background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
-      filter: invert(15%) sepia(6%) saturate(150%) hue-rotate(12deg) brightness(90%) contrast(85%);
-    }
+.social-icons .icon {
+width: 24px;
+height: 24px;
+background-size: cover;
+opacity: 0.7;
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-    .icon.twitter {
-      background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg');
-      filter: invert(15%) sepia(6%) saturate(150%) hue-rotate(12deg) brightness(90%) contrast(85%);
-    }
+.social-icons .icon:hover {
+transform: scale(1.2);
+opacity: 1;
+}
 
-    .icon.tiktok {
-      background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg');
-      filter: invert(15%) sepia(6%) saturate(150%) hue-rotate(12deg) brightness(90%) contrast(85%);
-    }
+.icon.instagram {
+background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+filter: invert(15%) sepia(6%) saturate(150%) hue-rotate(12deg) brightness(90%) contrast(85%);
+}
 
-    section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+.icon.twitter {
+background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg');
+filter: invert(15%) sepia(6%) saturate(150%) hue-rotate(12deg) brightness(90%) contrast(85%);
+}
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.icon.tiktok {
+background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg');
+filter: invert(15%) sepia(6%) saturate(150%) hue-rotate(12deg) brightness(90%) contrast(85%);
+}
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      padding: 3rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+section {
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-    .product-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+section.visible {
+opacity: 1;
+transform: translateY(0);
+}
 
-    .product-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-    }
+.product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 2rem;
+padding: 3rem;
+max-width: 1200px;
+margin: 0 auto;
+}
 
-    .product-image {
-      width: 100%;
-      height: 180px;
-      background-color: var(--accent);
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
+.product-card {
+background-color: var(--card-bg);
+border: 1px solid var(--border);
+padding: 1.5rem;
+text-align: center;
+border-radius: 10px;
+box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .product-card button {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+.product-card:hover {
+transform: translateY(-10px) scale(1.02);
+box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
 
-    .product-card button:hover {
-      background-color: #8a5e33;
-      transform: scale(1.05);
-    }
+.product-image {
+width: 100%;
+height: 180px;
+background-color: var(--accent);
+border-radius: 6px;
+margin-bottom: 1rem;
+}
 
-    
-      50% {
-        transform: translateY(-5px);
-        filter: drop-shadow(0 0 12px var(--accent));
-      }
-    }
+.product-card button {
+margin-top: 1rem;
+padding: 0.6rem 1.2rem;
+background-color: var(--accent);
+color: white;
+border: none;
+border-radius: 4px;
+font-size: 0.9rem;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-card button:hover {
+background-color: #8a5e33;
+transform: scale(1.05);
+}
+
+@keyframes floatGlow {
+0%, 100% {
+transform: translateY(0);
+filter: drop-shadow(0 0 3px var(--accent));
+}
+50% {
+transform: translateY(-5px);
+filter: drop-shadow(0 0 12px var(--accent));
+}
+}
+    .parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    background-size: cover;
+    transform: translateZ(-1px) scale(2);
+    pointer-events: none;
+  }
     /* Removed parallax background to improve logo clarity */
-  
 
-  
 
-  
+
+
+
 </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('section');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, { threshold: 0.1 });
 
-      sections.forEach(section => observer.observe(section));
-    });
-  </script>
+sections.forEach(section => observer.observe(section));
+});
+</script>
 </head>
 <body>
+  <div class="parallax-bg"></div>
   <main>
   
-  
-  <header>
-    <div class="logo">
-      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/oplogo.png" alt="OPR8TR brand logo – tactical operator silhouette">
-    </div>
-    <nav aria-label="Primary navigation">
-      <ul>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Supply Drop</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-    <div class="social-icons">
-      <a href="#" class="icon instagram" aria-label="Instagram"></a>
-      <a href="#" class="icon twitter" aria-label="Twitter"></a>
-      <a href="#" class="icon tiktok" aria-label="TikTok"></a>
-    </div>
-  </header>
 
-  <section id="featured">
-    <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align:center;">Supply Drop</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <div class="product-image"></div>
-        <h3>Night Reaper Patch</h3>
-        <p style="opacity: 0.8; font-size: 0.9rem;">Limited edition embroidered patch</p>
+<header>
+<div class="logo">
+      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/oplogo.png" alt="[OPR8TR] Logo">
+      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/oplogo.png" alt="OPR8TR brand logo – tactical operator silhouette">
+</div>
+    <nav>
+    <nav aria-label="Primary navigation">
+<ul>
+<li><a href="#">Shop</a></li>
+<li><a href="#">Supply Drop</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">About</a></li>
+</ul>
+</nav>
+<div class="social-icons">
+<a href="#" class="icon instagram" aria-label="Instagram"></a>
+<a href="#" class="icon twitter" aria-label="Twitter"></a>
+<a href="#" class="icon tiktok" aria-label="TikTok"></a>
+</div>
+</header>
+
+<section id="featured">
+<h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align:center;">Supply Drop</h2>
+<div class="product-grid">
+<div class="product-card">
+<div class="product-image"></div>
+<h3>Night Reaper Patch</h3>
+<p style="opacity: 0.8; font-size: 0.9rem;">Limited edition embroidered patch</p>
+        <button>Add to Loadout</button>
         <button aria-label="Add item to Loadout">Add to Loadout</button>
-      </div>
-      <div class="product-card">
-        <div class="product-image"></div>
-        <h3>Field Operator Tee</h3>
-        <p style="opacity: 0.8; font-size: 0.9rem;">Soft cotton shirt with tactical vibes</p>
-        <button>Add to Loadout</button>
-      </div>
-      <div class="product-card">
-        <div class="product-image"></div>
-        <h3>Ghost Ops Sticker</h3>
-        <p style="opacity: 0.8; font-size: 0.9rem;">Durable vinyl. Mission-ready.</p>
-        <button>Add to Loadout</button>
-      </div>
-    </div>
-  </section>
+</div>
+<div class="product-card">
+<div class="product-image"></div>
+<h3>Field Operator Tee</h3>
+<p style="opacity: 0.8; font-size: 0.9rem;">Soft cotton shirt with tactical vibes</p>
+<button>Add to Loadout</button>
+</div>
+<div class="product-card">
+<div class="product-image"></div>
+<h3>Ghost Ops Sticker</h3>
+<p style="opacity: 0.8; font-size: 0.9rem;">Durable vinyl. Mission-ready.</p>
+<button>Add to Loadout</button>
+</div>
+</div>
+</section>
     </main>
   <footer style="background-color: var(--card-bg); color: var(--black); text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); font-size: 0.9rem;">
     <p>&copy; 2025 OPR8TR. All rights reserved.</p>
