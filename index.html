@@ -189,18 +189,7 @@
         filter: drop-shadow(0 0 12px var(--accent));
       }
     }
-    .parallax-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-    background-size: cover;
-    transform: translateZ(-1px) scale(2);
-    pointer-events: none;
-  }
+    /* Removed parallax background to improve logo clarity */
   
 
   
@@ -223,13 +212,14 @@
   </script>
 </head>
 <body>
-  <div class="parallax-bg"></div>
+  <main>
+  
   
   <header>
     <div class="logo">
-      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/oplogo.png" alt="[OPR8TR] Logo">
+      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/oplogo.png" alt="OPR8TR brand logo – tactical operator silhouette">
     </div>
-    <nav>
+    <nav aria-label="Primary navigation">
       <ul>
         <li><a href="#">Shop</a></li>
         <li><a href="#">Supply Drop</a></li>
@@ -251,7 +241,7 @@
         <div class="product-image"></div>
         <h3>Night Reaper Patch</h3>
         <p style="opacity: 0.8; font-size: 0.9rem;">Limited edition embroidered patch</p>
-        <button>Add to Loadout</button>
+        <button aria-label="Add item to Loadout">Add to Loadout</button>
       </div>
       <div class="product-card">
         <div class="product-image"></div>
@@ -267,5 +257,15 @@
       </div>
     </div>
   </section>
+    </main>
+  <footer style="background-color: var(--card-bg); color: var(--black); text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); font-size: 0.9rem;">
+    <p>&copy; 2025 OPR8TR. All rights reserved.</p>
+    <p style="opacity: 0.7;">Built for the bold. Stay unauthorized.</p>
+    <div class="social-icons" style="justify-content: center; margin-top: 1rem;">
+    <a href="https://instagram.com/yourprofile" class="icon instagram" aria-label="Instagram"></a>
+    <a href="https://twitter.com/yourprofile" class="icon twitter" aria-label="Twitter"></a>
+    <a href="https://tiktok.com/@yourprofile" class="icon tiktok" aria-label="TikTok"></a>
+
+</footer>
 </body>
 </html>
