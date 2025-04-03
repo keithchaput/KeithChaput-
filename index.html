@@ -53,8 +53,6 @@
       height: 80px;
       width: auto;
       border-radius: 50%;
-      filter: drop-shadow(0 0 3px var(--accent));
-      animation: floatGlow 4s ease-in-out infinite;
       transition: transform 0.3s ease;
     }
 
@@ -70,17 +68,12 @@
     }
 
     nav a {
-      color: var(--black);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: bold;
-      position: relative;
-      transition: color 0.3s ease;
-    }
+$1
+      letter-spacing: 0.05em;
 
     nav a:hover {
       color: var(--accent);
-      text-shadow: 0 0 5px var(--accent);
+      
     }
 
     .social-icons {
@@ -100,6 +93,7 @@
     }
 
     .social-icons .icon:hover {
+      box-shadow: 0 0 8px var(--accent);
       transform: scale(1.2);
       opacity: 1;
     }
@@ -179,11 +173,7 @@
       transform: scale(1.05);
     }
 
-    @keyframes floatGlow {
-      0%, 100% {
-        transform: translateY(0);
-        filter: drop-shadow(0 0 3px var(--accent));
-      }
+    
       50% {
         transform: translateY(-5px);
         filter: drop-shadow(0 0 12px var(--accent));
