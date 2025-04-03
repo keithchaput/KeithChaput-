@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redacted Supply</title>
+  <title>[OPR8TR]</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -66,10 +66,34 @@
       text-decoration: none;
       font-size: 1rem;
       transition: opacity 0.2s ease-in-out;
+      position: relative;
     }
 
-    nav a:hover {
-      opacity: 0.6;
+    nav a::before {
+      content: attr(data-glitch);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: var(--sand);
+      z-index: 2;
+      white-space: nowrap;
+      pointer-events: none;
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+      opacity: 0;
+      transform: translateX(-2px);
+    }
+
+    nav a:hover::before {
+      animation: glitch-text 0.3s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes glitch-text {
+      0% { transform: translateX(-2px); opacity: 0.6; }
+      50% { transform: translateX(2px); opacity: 1; }
+      100% { transform: translateX(-1px); opacity: 0.7; }
     }
 
     .social-links {
@@ -90,7 +114,8 @@
     .social-links a:hover {
       opacity: 1;
     }
-      .hero {
+
+    .hero {
       text-align: center;
       padding: 4rem 2rem;
     }
@@ -108,6 +133,7 @@
       letter-spacing: 0.05em;
       opacity: 0.85;
     }
+
     .hero-text {
       margin-left: auto;
       margin-right: auto;
@@ -133,30 +159,11 @@
       letter-spacing: 0.05em;
       opacity: 0.85;
     }
-    .redacted-word {
-      position: relative;
-      display: inline-block;
-      color: var(--sand);
-    }
 
-    .redacted-word::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 0.4em; opacity: 0.85;
-      background-color: rgba(0, 0, 0, 0.85);
-      transform: translateY(-50%);
-    }
     .glitch-divider {
       width: 100%;
       height: 4px;
-      background: repeating-linear-gradient(
-        to right,
-        black 0 10px,
-        var(--sand) 10px 20px
-      );
+      background: repeating-linear-gradient(to right, black 0 10px, var(--sand) 10px 20px);
       animation: glitch-flicker 1s infinite steps(2, end);
     }
 
@@ -164,6 +171,7 @@
       0%, 100% { opacity: 1; transform: translateX(0); }
       50% { opacity: 0.5; transform: translateX(-2px); }
     }
+
     .social-icons {
       display: flex;
       justify-content: center;
@@ -202,18 +210,14 @@
       background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg');
       filter: invert(91%) sepia(13%) saturate(682%) hue-rotate(356deg) brightness(90%) contrast(90%);
     }
+
     .glitch-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(255, 255, 255, 0.015) 3px
-      );
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.015) 3px);
       pointer-events: none;
       z-index: 0;
       animation: glitch-bg-flicker 0.3s infinite;
@@ -224,6 +228,7 @@
       50% { opacity: 0.05; }
       100% { opacity: 0.02; }
     }
+
     .glitch-transition {
       width: 100%;
       height: 10px;
@@ -235,70 +240,60 @@
       height: 100%;
       display: block;
     }
-</style>
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    button::before {
+      content: attr(data-glitch);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: var(--black);
+      z-index: 2;
+      white-space: nowrap;
+      pointer-events: none;
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+      opacity: 0;
+      transform: translateX(-2px);
+    }
+
+    button:hover::before {
+      animation: glitch-text 0.3s linear infinite;
+      opacity: 0.7;
+    }
+
+    button {
+      position: relative;
+    }
+  </style>
 </head>
 <body>
   <div class="glitch-bg"></div>
   <header>
     <div class="logo">
-      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/rslogo.png" alt="Redacted Supply Logo" style="height: 140px; border-radius: 50%; box-shadow: 0 8px 16px rgba(225, 215, 152, 0.3);">
+      <img src="/mnt/data/[OPR8TR]logo.png" alt="[OPR8TR] Logo" style="height: 140px; border-radius: 50%; box-shadow: 0 8px 16px rgba(225, 215, 152, 0.3);">
     </div>
     <div class="hero-text">
-      <h1><span class="redacted-word">REDACTED</span> SUPPLY</h1>
-      <p class="tagline">unauthorized. </p>
+      <h1>[OPR8TR]</h1>
+      <p class="tagline">Tactical. Drip. Certified.</p>
     </div>
-      <nav>
+    <nav>
       <ul>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Supply Drop</a></li>
-        <li><a href="#"> Contact</a></li>
-        <li><a href="#">About</a></li>
-
+        <li><a href="#" data-glitch="Shop">Shop</a></li>
+        <li><a href="#" data-glitch="Supply Drop">Supply Drop</a></li>
+        <li><a href="#" data-glitch="Contact">Contact</a></li>
+        <li><a href="#" data-glitch="About">About</a></li>
       </ul>
     </nav>
-    
-    
   </header>
-  <div class="social-icons">
-    <a href="#" aria-label="Instagram" class="icon instagram"></a>
-    <a href="#" aria-label="Twitter" class="icon twitter"></a>
-    <a href="#" aria-label="TikTok" class="icon tiktok"></a>
-  </div>
-  <div class="glitch-transition">
-    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
-      <defs>
-        <filter id="glitch">
-          <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
-          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" />
-        </filter>
-      </defs>
-      <rect x="0" y="0" width="100" height="10" filter="url(#glitch)" fill="var(--sand)" />
-    </svg>
-  </div>
-
-  
-  
-    <section id="supply-drop" style="padding: 4rem 2rem; text-align: center; background-color: var(--tactical-green);">
-    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Supply Drop</h2>
-    <p style="font-size: 1rem; opacity: 0.85; max-width: 600px; margin: 0 auto;">Featured release: Limited-edition tactical drop bag with embroidered morale patch.</p>
-  </section>
-
-  <section id="about" style="padding: 4rem 2rem; text-align: center;">
-    <h2 style="font-size: 2rem; margin-bottom: 1rem;">About</h2>
-    <p style="font-size: 1rem; opacity: 0.85; max-width: 700px; margin: 0 auto;">
-      Redacted Supply is a mission-driven apparel brand blending tactical style with street culture. 
-      Inspired by special ops aesthetics and underground movements, our designs challenge conformity, support the unseen, and arm you with identity.
-    </p>
-  </section>
-
-  <section id="contact" style="padding: 4rem 2rem; text-align: center;">
-    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Contact</h2>
-    <form style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
-      <input type="text" placeholder="Name" style="padding: 0.75rem; border: none; border-radius: 4px;">
-      <input type="email" placeholder="Email" style="padding: 0.75rem; border: none; border-radius: 4px;">
-      <textarea rows="5" placeholder="Message" style="padding: 0.75rem; border: none; border-radius: 4px;"></textarea>
-      <button type="submit" style="padding: 0.75rem; background-color: var(--sand); color: var(--black); font-weight: bold; border: none; border-radius: 4px; cursor: pointer;">Send</button>
-    </form>
-  </section>
-</body>
-</html>
