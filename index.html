@@ -40,8 +40,10 @@
     }
 
     .logo img {
-      height: 120px;
+      height: 140px;
       width: auto;
+      border-radius: 50%;
+      box-shadow: 0 8px 16px rgba(225, 215, 152, 0.3);
       filter: drop-shadow(0 0 3px var(--sand));
       animation: pulseGlow 3s ease-in-out infinite;
     }
@@ -96,70 +98,6 @@
       100% { transform: translateX(-1px); opacity: 0.7; }
     }
 
-    .social-links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin-left: 1rem;
-    }
-
-    .social-links a {
-      color: var(--sand);
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
-      opacity: 0.75;
-    }
-
-    .social-links a:hover {
-      opacity: 1;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .tagline {
-      font-size: 1.25rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      opacity: 0.85;
-    }
-
-    .hero-text {
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .hero-text h1 {
-      font-size: 3rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-text .tagline {
-      font-size: 1.25rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      opacity: 0.85;
-    }
-
     .glitch-divider {
       width: 100%;
       height: 4px;
@@ -178,9 +116,7 @@
       align-items: center;
       flex-direction: row;
       gap: 1.5rem;
-      margin-left: auto;
-      margin-right: auto;
-      padding-top: 1rem;
+      padding: 1rem 0;
     }
 
     .social-icons .icon {
@@ -228,65 +164,13 @@
       50% { opacity: 0.05; }
       100% { opacity: 0.02; }
     }
-
-    .glitch-transition {
-      width: 100%;
-      height: 10px;
-      overflow: hidden;
-    }
-
-    .glitch-transition svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    button::before {
-      content: attr(data-glitch);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      color: var(--black);
-      z-index: 2;
-      white-space: nowrap;
-      pointer-events: none;
-      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
-      opacity: 0;
-      transform: translateX(-2px);
-    }
-
-    button:hover::before {
-      animation: glitch-text 0.3s linear infinite;
-      opacity: 0.7;
-    }
-
-    button {
-      position: relative;
-    }
   </style>
 </head>
 <body>
   <div class="glitch-bg"></div>
   <header>
     <div class="logo">
-      <img src="/mnt/data/[OPR8TR]logo.png" alt="[OPR8TR] Logo" style="height: 140px; border-radius: 50%; box-shadow: 0 8px 16px rgba(225, 215, 152, 0.3);">
-    </div>
-    <div class="hero-text">
-      <h1>[OPR8TR]</h1>
-      <p class="tagline">Tactical. Drip. Certified.</p>
+      <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/[OPR8TR]logo.png" alt="[OPR8TR] Logo">
     </div>
     <nav>
       <ul>
@@ -296,4 +180,9 @@
         <li><a href="#" data-glitch="About">About</a></li>
       </ul>
     </nav>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram" class="icon instagram"></a>
+      <a href="#" aria-label="Twitter" class="icon twitter"></a>
+      <a href="#" aria-label="TikTok" class="icon tiktok"></a>
+    </div>
   </header>
