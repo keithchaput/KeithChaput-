@@ -37,12 +37,11 @@
 
     header {
       background-color: var(--card-bg);
-      padding: 1rem 2rem;
+      padding: 1rem 2rem 3rem;
       border-bottom: 1px solid var(--border);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -84,8 +83,7 @@
       flex-wrap: wrap;
       list-style: none;
       gap: 1.5rem;
-      width: 100%;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     nav a {
@@ -228,7 +226,7 @@
   <main>
     <header>
       <div class="logo">
-        <img src="/mnt/data/oplogo.webp" alt="[OPR8TR] logo – tactical operator silhouette with rifle and NVGs">
+        <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/oplogo.webp" alt="[OPR8TR] logo – tactical operator silhouette with rifle and NVGs">
       </div>
       <nav aria-label="Primary navigation">
         <ul>
