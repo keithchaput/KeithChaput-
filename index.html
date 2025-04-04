@@ -29,7 +29,7 @@
       transform-style: preserve-3d;
       overflow-x: hidden;
       background-color: var(--background);
-      background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+      background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
       background-repeat: repeat;
       font-family: 'Anton', sans-serif;
       color: var(--black);
@@ -46,7 +46,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
@@ -54,7 +54,7 @@
     }
 
     .logo img {
-      height: 80px;
+      height: 100px;
       width: auto;
       border-radius: 50%;
       transition: transform 0.3s ease;
@@ -62,7 +62,7 @@
 
     @media (max-width: 600px) {
       .logo img {
-        height: 60px;
+        height: 70px;
       }
     }
 
@@ -99,7 +99,7 @@
     nav a {
       color: var(--black);
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: bold;
       position: relative;
       transition: color 0.3s ease;
@@ -115,20 +115,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
+      gap: 1.2rem;
       padding: 0.5rem 0;
     }
 
     .social-icons .icon {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       background-size: cover;
       opacity: 0.7;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .social-icons .icon:hover {
-      transform: scale(1.2);
+      transform: scale(1.25);
       opacity: 1;
     }
 
@@ -162,7 +162,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
-      padding: 3rem;
+      padding: 4rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -172,32 +172,32 @@
       border: 1px solid var(--border);
       padding: 1.5rem;
       text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .product-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
     }
 
     .product-image {
       width: 100%;
-      height: 180px;
+      height: 200px;
       background-color: var(--accent);
-      border-radius: 6px;
+      border-radius: 8px;
       margin-bottom: 1rem;
     }
 
     .product-card button {
       margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
+      padding: 0.7rem 1.4rem;
       background-color: var(--accent);
       color: white;
       border: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
+      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
@@ -244,7 +244,7 @@
     </header>
 
     <section id="featured">
-      <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align:center;">Supply Drop</h2>
+      <h2 style="font-size: 2.75rem; margin-bottom: 2rem; text-align:center; letter-spacing: 1px;">Supply Drop</h2>
       <div class="product-grid">
         <div class="product-card">
           <div class="product-image"></div>
