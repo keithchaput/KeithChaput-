@@ -211,11 +211,7 @@
       margin-bottom: 1rem;
     }
 
-    $1font-weight: bold;$2
-  padding: 1rem 1.8rem;
-  font-size: 1.05rem;
-  border-radius: 10px;
-
+    
 
     .product-card button:hover {
   background-image: linear-gradient(145deg, #8a5e33, #5a3d20);
@@ -275,6 +271,13 @@ html {
   scroll-behavior: smooth;
 }
 
+    @media (max-width: 768px) {
+      #hero-image {
+        background-position: center 30%;
+        height: 60vh;
+      }
+    }
+
 </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -311,6 +314,8 @@ html {
         </ul>
       </nav>
     </header>
+    <section id="hero-image" style="width: 100%; height: 100vh; background: url('/mnt/data/operators.webp') center center / cover no-repeat; display: flex; align-items: center; justify-content: center; background-attachment: fixed;">
+    </section>
 
     <section id="featured">
       <h2 style="font-size: 3.5rem; margin-bottom: 2rem; text-align:center; letter-spacing: 3px; text-transform: uppercase; background: linear-gradient(90deg, #1C1C1C, #a67843, #1C1C1C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: flicker 3s infinite alternate;">Supply Drop</h2>
