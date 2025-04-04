@@ -169,7 +169,10 @@
       margin: 0 auto;
     }
 
-    $1background-image: url('https://www.transparenttextures.com/patterns/cross-scratches.png'); background-color: var(--card-bg); background-blend-mode: overlay;
+    .product-card {
+      background-image: url('https://www.transparenttextures.com/patterns/cross-scratches.png');
+      background-color: var(--card-bg);
+      background-blend-mode: overlay;
       border: 1px solid var(--border);
       padding: 1.5rem;
       text-align: center;
@@ -208,7 +211,7 @@
       margin-bottom: 1rem;
     }
 
-    $1
+    .product-card button {
   background-image: linear-gradient(145deg, var(--accent), #6b4a2e);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   font-weight: bold;
@@ -219,7 +222,7 @@
   isolation: isolate;
 }
 
-    $1
+    .product-card button:hover {
   background-image: linear-gradient(145deg, #8a5e33, #5a3d20);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   transform: scale(1.08);
