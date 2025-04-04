@@ -37,23 +37,26 @@
 
     header {
       background-color: var(--card-bg);
-      padding: 1rem 2rem 3rem;
+      padding: 1rem 2rem;
       border-bottom: 1px solid var(--border);
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
+    .logo {
+      order: 2;
+    }
+
     .logo img {
       height: 80px;
       width: auto;
       border-radius: 50%;
-      filter: drop-shadow(0 0 3px var(--accent));
-      animation: floatGlow 4s ease-in-out infinite;
       transition: transform 0.3s ease;
     }
 
@@ -76,6 +79,14 @@
       100% { transform: translate(0); filter: hue-rotate(0deg); }
     }
 
+    nav {
+      width: 100%;
+      order: 3;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
     nav ul {
       display: flex;
       justify-content: center;
@@ -83,7 +94,6 @@
       flex-wrap: wrap;
       list-style: none;
       gap: 1.5rem;
-      margin-top: 1.5rem;
     }
 
     nav a {
@@ -101,6 +111,7 @@
     }
 
     .social-icons {
+      order: 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -195,17 +206,6 @@
       background-color: #8a5e33;
       transform: scale(1.05);
     }
-
-    @keyframes floatGlow {
-      0%, 100% {
-        transform: translateY(0);
-        filter: drop-shadow(0 0 3px var(--accent));
-      }
-      50% {
-        transform: translateY(-5px);
-        filter: drop-shadow(0 0 12px var(--accent));
-      }
-    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -225,6 +225,11 @@
 <body>
   <main>
     <header>
+      <div class="social-icons">
+        <a href="#" class="icon instagram" aria-label="Instagram"></a>
+        <a href="#" class="icon twitter" aria-label="Twitter"></a>
+        <a href="#" class="icon tiktok" aria-label="TikTok"></a>
+      </div>
       <div class="logo">
         <img src="https://raw.githubusercontent.com/keithchaput/KeithChaput-/main/oplogo.webp" alt="[OPR8TR] logo – tactical operator silhouette with rifle and NVGs">
       </div>
@@ -236,11 +241,6 @@
           <li><a href="#">About</a></li>
         </ul>
       </nav>
-      <div class="social-icons">
-        <a href="#" class="icon instagram" aria-label="Instagram"></a>
-        <a href="#" class="icon twitter" aria-label="Twitter"></a>
-        <a href="#" class="icon tiktok" aria-label="TikTok"></a>
-      </div>
     </header>
 
     <section id="featured">
