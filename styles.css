@@ -78,58 +78,45 @@ section {
   color: #fff;
 }
 
-/* Toolkit List */
-.toolkit-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.toolkit-list li {
-  background: #f1f1f1;
-  padding: 1rem;
-  border-radius: 6px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.toolkit-list li:hover {
-  transform: translateY(-5px);
-}
-
 /* Donate Section */
 #donate {
   background: #fff8e1;
   border: 2px solid #fdd835;
   border-radius: 10px;
   text-align: center;
+  padding-bottom: 3rem;
 }
 
 #donate .btn {
   animation: pulse 1.5s infinite;
 }
 
-/* Resources Grid */
-.resource-grid {
+.donate-button-wrap {
+  margin-top: 1.5rem;
+}
+
+/* Card Grid Styles */
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
-.resource-item {
+.card {
   background-color: #f4f4f4;
-  padding: 1.25rem;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 10px;
   text-align: center;
-  transition: background 0.3s, transform 0.3s;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.resource-item:hover {
-  background-color: #eaeaea;
-  transform: scale(1.03);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
